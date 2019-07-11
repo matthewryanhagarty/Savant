@@ -25,32 +25,45 @@
 
    <!-- //  second nav bar // -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">savant icon</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">teach</a>
-            <a class="nav-item nav-link" href="#">all classes</a>
-            <a class="nav-item nav-link" href="#">my classes</a>
+        <a class="navbar-brand" href="#">
+            <img src="../public/assets/images/savant-demo-logo.png" style="height: 30px; width: 30px;">
+        </a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">teach<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">class list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">saved classes</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control ml-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary ml-2 my-sm-0" type="submit">search</button>
+          </form>
         </div>
-        <form class="form-inline mr-auto">
-            <input class="form-control mr-2" type="search" placeholder="search classes" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">search</button>
-            </form>
-        </nav>
+      </nav>
 </div>
 <br>
 <br>
+
+<!-- // first row - button -> logo -> button // -->
+
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center" style="text-align: center">
         <div class="col-4">
             <button type="button" class="btn btn-secondary btn-md">teach a class</button>
         </div>
         <div class="col-4">
-            <img src="../public/assets/images/savant-demo-logo.png" id="logo" alt="savant-logo" style="height: 100%; width: 100%;">
+            <img src="../public/assets/images/savant-demo-logo.png" id="logo" alt="savant-logo" style="height: 80%; width: 80%;">
         </div>
         <div class="col-4">
             <button type="button" class="btn btn-secondary btn-md">learn a skill</button>
@@ -58,6 +71,86 @@
     </div>
 </div>
 
+<!-- // carousel test // -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="row_inner">
+            
+<!-- // cards // -->
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+<!-- // end cards // -->
+        </div>
+    </div>
+</div>
+
+      
+            
+
+// script tags //
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
