@@ -1,5 +1,13 @@
 var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
+var env = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/../config/config.json")[env];
+
+if (config.use_env_variable) {
+    var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  } else {
+    var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  }
+
 
 var Classes = sequelize.define("Classes", {
         title: {
@@ -30,13 +38,21 @@ var Classes = sequelize.define("Classes", {
                 isUrl: true
             }
         },
+        teacher: {
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
         categ: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 len: [2, 10]
             }
-        }
+        },
+        uuid: {
+            type: Sequelize.UUID,
+            allowNull: false
+        } 
     });
 
 Classes.sync();
