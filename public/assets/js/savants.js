@@ -1,95 +1,71 @@
 // search bar on-click --> display results //
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     var searchSubmit = $("#search-input").val().trim();
 
-$("#search-submit").on("click", function(event) {
-    
-    event.preventDefault();
-    
-    var search = $("#search-input").val().trim();
+    $("#search-submit").on("click", function (event) {
 
-    $.ajax({
-        type: "POST",
-        url: "/api/classes",   // <-- probably needs new url
-        dataType: "json",
-        data: data,   // -- neccesary?
-        success: function(data) {
+        event.preventDefault();
 
-            for (i = 0; i < data.length; i++) {
+        var search = $("#search-input").val().trim();
 
-                if (data.length === 0) {
-                    var noResult = $("<h3>")
-                    noResult.html("Unfortunately, no classes exist ")
-                    $("#card-section").append(noResult)
+        $.ajax({
+            type: "POST",
+            url: "/api/classes",   // <-- probably needs new url
+            dataType: "json",
+            data: data,   // -- neccesary?
+            success: function (data) {
 
-                } else {
+                for (i = 0; i < data.length; i++) {
 
-                var item = $("<div>");
-                item.addClass("item")
+                    if (data.length === 0) {
+                        var noResult = $("<h3>")
+                        noResult.html("Unfortunately, no classes exist ")
+                        $("#card-section").append(noResult)
 
-                var card = $("<div>");
-                card.addClass("card");
+                    } else {
 
-                var cardBody = $("<div>");
-                cardBody.addClass("card-body");
+                        var item = $("<div>");
+                        item.addClass("item")
 
-                var button = $("<button>");
-                button.addClass("youtube-btn");
+                        var card = $("<div>");
+                        card.addClass("card");
 
-                var teacher = data[i].teacher;
-                var title = data[i].title;
-                var date = data[i].date;
-                var description = data[i].desc;
-                var category = data[i].category;
-                var youtube = data[i].youtube;
+                        var cardBody = $("<div>");
+                        cardBody.addClass("card-body");
 
-                cardBody.append("<h5>" + teacher + "</h5>");
-                cardBody.append("<h6>" + title + "</h6>");
-                cardBody.append("<p>" + date + "</p>");
-                cardBody.append("<p>" + description + "</p>");
-                cardBody.append("<p>" + category + "</p>");
+                        var button = $("<button>");
+                        button.addClass("youtube-btn");
 
-                card.append(youtube);
-                card.append(cardBody);
+                        var teacher = data[i].teacher;
+                        var title = data[i].title;
+                        var date = data[i].date;
+                        var description = data[i].desc;
+                        var category = data[i].category;
+                        var youtube = data[i].youtube;
 
-                item.append(card);
+                        cardBody.append("<h5>" + teacher + "</h5>");
+                        cardBody.append("<h6>" + title + "</h6>");
+                        cardBody.append("<p>" + date + "</p>");
+                        cardBody.append("<p>" + description + "</p>");
+                        cardBody.append("<p>" + category + "</p>");
 
-                $("#card-section").append(item);
+                        card.append(youtube);
+                        card.append(cardBody);
 
+                        item.append(card);
 
+                        $("#card-section").append(item);
+
+                    }
+
+                }
             }
+        });
 
 
-        }
-      });
+    });
 
 
-
-    
 });
-
-
-})
-
-
-
-
-
-// function getCards(search) {
-//     var searchString = search || "";
-//     if (searchString) {
-//       searchString = "/classes/" + searchString;
-//     }
-//     $.get("/api/posts" + searchString, function(data) {
-//       console.log("Posts", data);
-//       posts = data;
-//       if (!posts || !posts.length) {
-//         displayEmpty();
-//       }
-//       else {
-//         initializeRows();
-//       }
-//     });
-//   }
