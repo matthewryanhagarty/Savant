@@ -20,15 +20,32 @@ $("#search-submit").on("click", function(event) {
 
             for (i = 0; i < data.length; i++) {
 
-                if (response.data.length === 0) {
+                if (data.length === 0) {
                     var noResult = $("<h1>")
                     noResult.css("font-size", "30px")
-                    noResult.html("No results")
+                    noResult.html("Unfortunately, no classes exist ")
                     $("#card-section").append(noResult)
-                    
+
                 } else {
 
-                var item = $("<div>")
+                var item = $("<div>");
+                item.addClass("item")
+
+                var card = $("<div>");
+                card.addClass("card");
+
+                var cardBody = $("<div>");
+                cardBody.addClass("card-body");
+
+                var button = $("<button>");
+                button.addClass("youtube-btn");
+
+                var name = data[i].name;
+                var email = data[i].email;
+                var 
+
+
+
 
 
             }
