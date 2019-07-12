@@ -8,10 +8,25 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public.index.html"));
     });
 
+  
     // Route to Create a Class Page
     app.get("/api/teacher", function(req,res) {
         res.sendFile(path.join(__dirname, "../public/teacher.hmtl"));
     });
+  
+    app.get("/api/key", function(req, res) {
+      res.json(
+        {
+          apiKey: process.env.firebase_apiKey,
+          authDomain: process.env.firebase_authDomain,
+          databaseURL: process.env.firebase_databaseURL,
+          projectId: process.env.firebase_projectId,
+          storageBucket: process.env.firebase_storageBucket,
+          messagingSenderId: process.env.firebase_messagingSenderId,
+          appId: process.env.firebase_appId
+        }
+      )
+    })
 
     // Display All Classes
     app.get("/api/classes", function(req,res) {
@@ -70,5 +85,4 @@ module.exports = function(app) {
           });
     });
     
-
 };

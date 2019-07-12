@@ -1,5 +1,12 @@
 var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
+var env = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/../config/config.json")[env];
+
+if (config.use_env_variable) {
+    var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  } else {
+    var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  }
 
 var User = sequelize.define("User", {
         name: {
@@ -19,13 +26,9 @@ var User = sequelize.define("User", {
                 }
             }
         },
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                len: [6, 20]
-                //encryption package or firebase?
-            }
+        uuid: {
+            type: Sequelize.UUID,
+            allowNull: false
         },
         classes: {
             type: Sequelize.STRING,
