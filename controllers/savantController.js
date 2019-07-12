@@ -5,13 +5,13 @@ module.exports = function(app) {
 
     // Route to Landing Page
     app.get("/", function(req,res){
-        res.sendFile(path.join(__dirname, "../public.index.html"));
+        res.sendFile(path.join(__dirname, "../public/html/index.html"));
     });
 
   
     // Route to Create a Class Page
     app.get("/api/teacher", function(req,res) {
-        res.sendFile(path.join(__dirname, "../public/teacher.hmtl"));
+        res.sendFile(path.join(__dirname, "../public/html/teacher.html"));
     });
   
     app.get("/api/key", function(req, res) {

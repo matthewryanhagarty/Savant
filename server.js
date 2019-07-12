@@ -5,10 +5,12 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-var routes = require("./controllers/userController.js");
+require("./controllers/savantController")(app);
+require("./controllers/userController")(app);
+var db = require("./models")
 
-app.use(routes);
-
-app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
-});
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
