@@ -6,6 +6,14 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public.index.html"));
     });
 
+    app.get("/api/classes", function(req,res) {
+        db.Classes.findAll({})
+            .then(function(dbClasses){
+                res.json(dbClasses);
+            });
+    });
+
+
 };
 
 
