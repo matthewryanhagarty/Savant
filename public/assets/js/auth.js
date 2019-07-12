@@ -3,7 +3,7 @@ $(function() {
 
   /*
      Global Variables
-  */
+  */ 
 
   var loginBtn = $("#signIn");
   var signUpBtn = $("#signUp");
