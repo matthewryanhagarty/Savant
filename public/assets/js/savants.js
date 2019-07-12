@@ -1,13 +1,13 @@
-// search bar on-click --> display results //
-
 $(document).ready(function () {
-
+    
+    $(card-section).empty();
     renderCards();
 
     var searchSubmit = $("#search-input").val().trim();
 
     $("#search-submit").on("click", function (event) {
 
+        $(card-section).empty();
         event.preventDefault();
 
         var search = $("#search-input").val().trim();
