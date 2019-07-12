@@ -108,7 +108,6 @@ function renderCards() {
 
                         $("#card-section").append(item);
 
-
                 }
             }
         });
