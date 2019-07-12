@@ -53,8 +53,19 @@ module.exports = function(app) {
             });
     });
 
+    // Create a New Class
     app.post("/api/users/register", function(req,res) {
-    
+        console.log(req.body);
+        db.Classes.create({
+          title: req.body.title,
+          desc: req.body.desc,
+          date: req.body.date,
+          liveLink: req.body.liveLink,
+          categ: req.body.categ
+        })
+          .then(function(dbClass) {
+            res.json(dbClass);
+          });
     });
     
 
