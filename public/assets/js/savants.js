@@ -68,6 +68,12 @@ $(document).ready(function () {
 
 });
 
+function findAll() {
+
+
+};
+
+
 function renderCards() {
 
 
