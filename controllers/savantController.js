@@ -54,14 +54,16 @@ module.exports = function(app) {
     });
 
     // Create a New Class
-    app.post("/api/users/register", function(req,res) {
+    app.post("/api/classes/register", function(req,res) {
         console.log(req.body);
         db.Classes.create({
           title: req.body.title,
           desc: req.body.desc,
           date: req.body.date,
           liveLink: req.body.liveLink,
-          categ: req.body.categ
+          teacher: req.body.teacher,
+          categ: req.body.categ,
+          uuid: req.body.uuid
         })
           .then(function(dbClass) {
             res.json(dbClass);
