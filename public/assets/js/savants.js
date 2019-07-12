@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    $(card-section).empty();
+    $("#card-section").empty();
     renderCards();
 
     var searchSubmit = $("#search-input").val().trim();
