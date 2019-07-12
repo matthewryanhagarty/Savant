@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
 
     // Search Specific Class
-    app.get("/api/classes/:title", function(req,res) {
+    app.get("/api/classes/find/:title", function(req,res) {
         db.User.findAll({
             where: {
                 title: req.params.title
