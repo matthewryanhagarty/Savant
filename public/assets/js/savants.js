@@ -20,8 +20,7 @@ $("#search-submit").on("click", function(event) {
             for (i = 0; i < data.length; i++) {
 
                 if (data.length === 0) {
-                    var noResult = $("<h1>")
-                    noResult.css("font-size", "30px")
+                    var noResult = $("<h3>")
                     noResult.html("Unfortunately, no classes exist ")
                     $("#card-section").append(noResult)
 
@@ -46,8 +45,6 @@ $("#search-submit").on("click", function(event) {
                 var category = data[i].category;
                 var youtube = data[i].youtube;
 
-                // button.attr("href='" + youtube + "'");
-
                 cardBody.append("<h5>" + teacher + "</h5>");
                 cardBody.append("<h6>" + title + "</h6>");
                 cardBody.append("<p>" + date + "</p>");
@@ -56,11 +53,10 @@ $("#search-submit").on("click", function(event) {
 
                 card.append(youtube);
                 card.append(cardBody);
-                
 
+                item.append(card);
 
-
-
+                $("#card-section").append(item);
 
 
             }
