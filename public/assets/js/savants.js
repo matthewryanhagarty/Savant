@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
 
-    var cardContainer = $(".wrapper");
     var searchSubmit = $("#search-input").val().trim();
 
 $("#search-submit").on("click", function(event) {
@@ -40,9 +39,25 @@ $("#search-submit").on("click", function(event) {
                 var button = $("<button>");
                 button.addClass("youtube-btn");
 
-                var name = data[i].name;
-                var email = data[i].email;
-                var 
+                var teacher = data[i].teacher;
+                var title = data[i].title;
+                var date = data[i].date;
+                var description = data[i].desc;
+                var category = data[i].category;
+                var youtube = data[i].youtube;
+
+                // button.attr("href='" + youtube + "'");
+
+                cardBody.append("<h5>" + teacher + "</h5>");
+                cardBody.append("<h6>" + title + "</h6>");
+                cardBody.append("<p>" + date + "</p>");
+                cardBody.append("<p>" + description + "</p>");
+                cardBody.append("<p>" + category + "</p>");
+
+                card.append(youtube);
+                card.append(cardBody);
+                
+
 
 
 
