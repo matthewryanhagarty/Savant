@@ -54,6 +54,10 @@ $(function() {
       else auth.signOut();
     })
 
+    //This will close the modal if someone doesn't want to sign in //
+
+    $(".close").on("click", function() { $("#signInModal").hide("slow") });
+
     //The login button within the sign in modal
     loginBtn.on("click", function (event) {
       event.preventDefault();

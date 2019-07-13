@@ -1,232 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Savant</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div class="container-fluid">
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/">
-          <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
-      </a>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
+            </a>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-              <a class="nav-link" href="../html/teacher.html">teach<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">class list</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">saved classes</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control ml-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary ml-2 my-sm-0" id="search-submit" type="submit">search</button>
-        </form>
-        <button type="button" class="btn btn-light" id="navSignInOut">Sign In</button>
-      </div>
-    </nav>
-</div>
-<br>
-<br>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="navSignInOut">Sign In<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/teacher.html">Teach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="all-classes">Class List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saved Classes</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control" id="search-input" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-secondary ml-2 my-sm-0" id="search-submit" type="submit">Search
+                        Classes</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!-- // card section to holder dynamically generated cards // -->
 
-<!-- // card section to holder dynamically generated cards // -->
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md">
-            <div class="card-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="card-section">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="signInModal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Account Sign-In</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+    <div id="signInModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Account Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-        <form>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                                placeholder="Enter Email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="userPassword" placeholder="Enter Password">
+                        </div>
+                        <p id="signInError">Please click 'Sign In' to continue.</p>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="signIn" class="btn btn-light">Sign In</button>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" class="form-control" id="userPassword" placeholder="Password">
-            </div>
-            <p id="signInError">Please click sign in to continue.</p>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-          </form>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="signIn" class="btn btn-light">Sign-In</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br>
-<br>
-
-<!-- // first row - button -> logo -> button // -->
-<div class="container-fluid">
-    <div class="row justify-content-center align-items-center" style="text-align: center">
-        <div class="col-4">
-            <a href="../html/teacher.html"><button type="button" class="btn btn-secondary btn-md">teach a class</button></a>
-        </div>
-        <div class="col-4">
-            <img src="../assets/images/savant-demo-logo.png" href="/" id="logo" alt="savant-logo" style="height: 80%; width: 80%;">
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-secondary btn-md" id="find-all">learn a skill</button>
         </div>
     </div>
-</div>
-<br>
-<!-- // carousel test // -->
-<!-- // cards second attempt // -->
-<div class="container">
-    <div class="row">
-        <div class="wrapper">
-            <section id="section1">
-            <a href="#section3" class="arrow__btn">‹</a>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    <br>
 
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
+    <!-- // first row - button -> logo -> button // -->
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center" style="text-align: center">
+            <div class="col-4">
+                <a href="../html/teacher.html"><button type="button" class="btn btn-secondary btn-md">teach a
+                        class</button></a>
             </div>
-            <a href="#section2" class="arrow__btn">›</a>
-            </section>
-            <section id="section2">
-            <a href="#section1" class="arrow__btn">‹</a>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
+            <div class="col-4">
+                <img src="../assets/images/savant-demo-logo.png" href="/" id="logo" alt="savant-logo"
+                    style="height: 80%; width: 80%;">
             </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
+            <div class="col-4">
+                <button type="button" class="btn btn-secondary btn-md" id="find-all">learn a skill</button>
             </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <a href="#section3" class="arrow__btn">›</a>
-            </section>
-            <section id="section3">
-            <a href="#section2" class="arrow__btn">‹</a>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <div class="card-body">
-                        <h5 class="card-title">LET</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>  
-            </div>
-            <a href="#section1" class="arrow__btn">›</a>
-            </section>
         </div>
     </div>
-</div>
-<!-- // card end // -->
+    <br>
 
-<!-- // script tags // -->
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    <!-- // motto // -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h6 style="text-align: center">• E D U C A T I O N • t h r o u g h • O B S E R V A T I O N •</h6>
+            </div>
+        </div>
+    </div>
+    <br>
 
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-<script src="assets/js/auth.js"></script>
-<script src="assets/js/savants.js"></script>
+    <!-- // cards section // -->
+    <div class="container">
+        <div class="row">
+            <div class="wrapper">
+                <section id="section1">
+                    <a href="#section3" class="arrow__btn">‹</a>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/UM8mp-GHldA"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FD0wKNeOW38"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#section2" class="arrow__btn">›</a>
+                </section>
+                <section id="section2">
+                    <a href="#section1" class="arrow__btn">‹</a>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#section3" class="arrow__btn">›</a>
+                </section>
+                <section id="section3">
+                    <a href="#section2" class="arrow__btn">‹</a>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card" style="width: 18rem;">
+                            <iframe width="200" height="200" src="https://www.youtube.com/embed/O-Rgz0iDWnY"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <div class="card-body">
+                                <h5 class="card-title">LET</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#section1" class="arrow__btn">›</a>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- // card end // -->
+
+    <!-- // script tags // -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/savants.js"></script>
 
 </body>
+
 </html>

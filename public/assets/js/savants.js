@@ -83,36 +83,41 @@ function renderCards() {
             dataType: "json",
             success: function (data) {
 
-                for (i = 0; i < 7; i++) {
+                for (i = 1; i <= 9; i++) {
 
-                        var item = $("<div>");
-                        item.addClass("item")
+                    if (i % 3 === 0) {
+                        sectionCount++;
+                        var newSection = $(`<div id='section${sectionCount}'`)
+                            var item = $("<div>");
+                            item.addClass("item")
 
-                        var card = $("<div>");
-                        card.addClass("card");
+                            var card = $("<div>");
+                            card.addClass("card");
 
-                        var cardBody = $("<div>");
-                        cardBody.addClass("card-body");
+                            var cardBody = $("<div>");
+                            cardBody.addClass("card-body");
 
-                        var teacher = data[i].teacher;
-                        var title = data[i].title;
-                        var date = data[i].date;
-                        var description = data[i].desc;
-                        var category = data[i].category;
-                        var youtube = data[i].youtube;
+                            var teacher = data[i-1].teacher;
+                            var title = data[i-1].title;
+                            var date = data[i-1].date;
+                            var description = data[i-1].desc;
+                            var category = data[i-1].category;
+                            var youtube = data[i-1].youtube;
 
-                        cardBody.append("<h5>" + teacher + "</h5>");
-                        cardBody.append("<h6>" + title + "</h6>");
-                        cardBody.append("<p>" + date + "</p>");
-                        cardBody.append("<p>" + description + "</p>");
-                        cardBody.append("<p>" + category + "</p>");
+                            cardBody.append("<h5>" + teacher + "</h5>");
+                            cardBody.append("<h6>" + title + "</h6>");
+                            cardBody.append("<p>" + date + "</p>");
+                            cardBody.append("<p>" + description + "</p>");
+                            cardBody.append("<p>" + category + "</p>");
 
-                        card.append(youtube);
-                        card.append(cardBody);
+                            card.append(youtube);
+                            card.append(cardBody);
 
-                        item.append(card);
+                            item.append(card);
+                        newSection.append(item)
+                        $("#card-section").append(newSection);
+                    }
 
-                        $("#card-section").append(item);
 
                 }
             }
