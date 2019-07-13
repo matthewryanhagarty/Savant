@@ -5,7 +5,7 @@
     <title>Savant</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <div class="container-fluid">
@@ -14,13 +14,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">
-          <img src="assets/images/savant-demo-logo.png" style="height: 30px; width: 30px;">
+          <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
       </a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-              <a class="nav-link" href="#">teach<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/public/html/teacher.html">teach<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">class list</a>
@@ -56,7 +56,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Account Sign In</h5>
+        <h5 class="modal-title">Account Sign-In</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -64,7 +64,7 @@
       <div class="modal-body">
 
         <form>
-            <div class="form-group" id="myForm">
+            <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -79,8 +79,8 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" id="signIn" class="btn btn-light">Sign In</button>
-        <button type="button" id="signUp" class="btn btn-dark" data-dismiss="modal">Sign Up</button>
+        <button type="button" id="signIn" class="btn btn-light">Sign-In</button>
+        <button type="button" id="signUp" class="btn btn-dark" data-dismiss="modal">Sign-Up</button>
       </div>
     </div>
   </div>
@@ -93,13 +93,13 @@
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center" style="text-align: center">
         <div class="col-4">
-            <button type="button" class="btn btn-secondary btn-md">teach a class</button>
+            <a href="/classes/register"><button type="button" class="btn btn-secondary btn-md">teach a class</button></a>
         </div>
         <div class="col-4">
-            <img src="assets/images/savant-demo-logo.png" id="logo" alt="savant-logo" style="height: 80%; width: 80%;">
+            <a href="/"><img src="../assets/images/savant-demo-icon.png" id="logo" alt="savant-logo" style="height: 80%; width: 80%;"></a>
         </div>
         <div class="col-4">
-            <button type="button" class="btn btn-secondary btn-md">learn a skill</button>
+            <button type="button" class="btn btn-secondary btn-md" id="find-all">learn a skill</button>
         </div>
     </div>
 </div>
@@ -113,31 +113,28 @@
             <a href="#section3" class="arrow__btn">‹</a>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
@@ -147,31 +144,28 @@
             <a href="#section1" class="arrow__btn">‹</a>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
@@ -181,31 +175,28 @@
             <a href="#section2" class="arrow__btn">‹</a>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
             <div class="item">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/images/hips-swing.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/hips-swing.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LET</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>  
             </div>
