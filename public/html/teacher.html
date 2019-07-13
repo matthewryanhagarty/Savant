@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container-fluid teacher">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,18 +84,25 @@
         </div>
     </div>
 
-
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md">
+            <div class="col-12">
+                <h2 class="create-a-class">Create A Class</h2>
+                </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid  teacher">
+        <div class="row">
+            <div class="col-12 make-class">
                 <form>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Class Title:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex: JavaScript for Beginners">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Class Description:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ex: This class is an introduction to JavaScript function ...">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Class Category:</label>
@@ -114,6 +121,7 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Date & Time of Class:</label>
                         <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
                             <input type="text" class="form-control datetimepicker-input"
                                 data-target="#datetimepicker6" />
@@ -126,8 +134,9 @@
 
                     <div class="form-group">
                         <label for="formGroupExampleInput3">Your YouTube Embedded Live Link:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input">
+                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Place embedded link here">
                     </div>
+                    <button class="btn btn-outline-secondary" id="class-submit" type="submit">Submit Class</button>
                 </form>
             </div>
         </div>
