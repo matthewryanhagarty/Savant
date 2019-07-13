@@ -79,43 +79,30 @@
         <div class="col-md">
             <form>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Class Title:</label>
+                    <label for="formGroupExampleInput">Username:</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Class Description:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="newUserEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                        <label for="exampleFormControlSelect1">Class Category:</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>Programming</option>
-                          <option>Salad</option>
-                          <option>Mathematics</option>
-                          <option>Science</option>
-                          <option>Cooking</option>
-                          <option>Everything Esar</option>
-                          <option>Gardening</option>
-                          <option>Health & Fitness</option>
-                          <option>Visual Arts</option>
-                          <option>Music</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                        <div class="form-group">
-                            <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker6"/>
-                                <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput3">Your YouTube Embedded Live Link:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input">
+                  <label for="password">Password:</label>
+                  <input type="password" class="form-control" id="newUserPassword" placeholder="Password">
+                  <small id="passHelp" class="form-text text-muted">Passwords are never seen by the company.</small>
                 </div>
+                <div class="form-group">
+                    <label for="contact">Contact Info:</label>
+                    <input type="text" class="form-control" id="contactInfo" placeholder="LinkedIn, Twitter, Facebook links, etc.">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Example file input</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+      
+                <button type="button" id="signUp" class="btn btn-dark" data-dismiss="modal">Sign-Up</button>
+
             </form>
         </div>
     </div>
@@ -137,6 +124,7 @@
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 
 <script src="../assets/js/auth.js"></script>
+<script src="../assets/js/signUp.js"></script>
 
 </body>
 </html>
