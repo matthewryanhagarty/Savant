@@ -1,9 +1,10 @@
 
 .card {
-    height: 300px !important;
+    height:400px !important;
     width: 200px !important;
     margin: 0 auto;
     margin-bottom: 20px;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -21,7 +22,7 @@
     grid-template-columns: repeat(3, 100%);
     overflow: hidden;
     scroll-behavior: smooth;
-    height: 500px;
+    height: 500px !important;
 
   }
   .wrapper section {
