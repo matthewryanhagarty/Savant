@@ -9,9 +9,8 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/html/index.html"));
     });
 
-  
     // Route to Create a Class Page
-    app.get("/api/teacher", function(req,res) {
+    app.get("/classes/register", function(req,res) {
         res.sendFile(path.join(__dirname, "../public/html/teacher.html"));
     });
   
@@ -70,7 +69,7 @@ module.exports = function(app) {
     });
 
     // Create a New Class
-    app.post("/api/classes/register", function(req,res) {
+    app.post("/classes/register", function(req,res) {
         console.log(req.body);
         db.Classes.create({
           title: req.body.title,
