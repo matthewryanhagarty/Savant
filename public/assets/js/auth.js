@@ -2,15 +2,17 @@
 $(function() {
 
   /*
-     Global Variables
+     Global Variables for Sign In
   */ 
 
+  //Modal content
   var inputEmail = $("#userEmail");
   var inputPassword = $("#userPassword");
   var loginBtn = $("#signIn"); //Login user through modal
-  var signUpBtn = $("#signUp"); //Register user on sign up page
-  var signInModal = $("#signInModal"); //the modal to open
   var signInError = $("#signInError"); //Prompt to change
+
+  //Modal & nav-sign-in-button
+  var signInModal = $("#signInModal"); //the modal to open
   var navSignInOut = $("#navSignInOut"); //opens modal
 
 
@@ -21,25 +23,6 @@ $(function() {
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
-    /**
-     * 
-     * @param {Object} values is the email and password pair the user inputted to sign in.
-     * 
-     * Function creates the user based on the values and sends the new profile to the server.
-     */
-    function createUser(values) {
-      auth.createUserWithEmailAndPassword(values.email, values.pass).then(user => {
-        //Do something when user logs in for the first time
-        console.log(user);
-        $.post("/api/users/register", {email: values.email, uuid: user.uid}, function(data) {
-          console.log(data);
-          signInModal.hide("slow");
-        })
-      }).catch(err => {
-        if (err.code === "auth/weak-password") {signInError.text(err.message)}
-        else if (err.code === "auth/email-already-in-use") { signInError.text("This email is already in use! Try logging in...") }
-      })
-    }
 
     /**
      * 
@@ -78,13 +61,58 @@ $(function() {
         if (values) signIntoSite(values)
       });
     })
+
     
-    //The sign up button within the sign in modal
-    signUpBtn.on("click", function (event) {
-      event.preventDefault();
-      var values = getAccountData();
-      if (values) createUser(values)
-    })
+  /*
+     Global Variables for Sign Out
+  */ 
+
+  
+    /**
+     * 
+     * @param {Object} values is the email and password pair the user inputted to sign in.
+     * 
+     * Function creates the user based on the values and sends the new profile to the server.
+     */
+    function createUser(values) {
+      auth.createUserWithEmailAndPassword(values.email, values.pass).then(user => {
+        //Do something when user logs in for the first time
+        console.log(user);
+        $.post("/api/users/register", {email: values.email, uuid: user.uid}, function(data) {
+          console.log(data);
+          signInModal.hide("slow");
+        })
+      }).catch(err => {
+        if (err.code === "auth/weak-password") {passHelp.text(err.message)}
+        else if (err.code === "auth/email-already-in-use") { 
+          signIntoSite(values)
+          signUpError.text("Authentication already created, continue."); 
+        }
+        else console.log(err)
+      })
+    }
+
+  //Sign up Page
+  var signUpEmail = $("#newUserEmail");
+  var signUpPassword = $("#newUserPassword");
+  var signUpBtn = $("#signUp"); //Register user on sign up page
+  var signUpError = $("#signUpError");
+  
+  //The sign up button within the page
+  signUpBtn.on("click", function (event) {
+    event.preventDefault();
+
+    //Firebase email/pass
+    var values = {
+      email: signUpEmail.val().trim(),
+      pass: signUpPassword.val().trim()
+    };
+
+    //firebase checking
+    (!values.email) ? signUpError.text("Make sure to fill in the email!") : 
+      (!values.pass) ? signUpError.text("Make sure to fill in your password!") : 
+        createUser(values);
+  })
 
     //Whenever the account changes state between signed in / out
     auth.onAuthStateChanged((user) => {

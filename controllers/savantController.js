@@ -13,7 +13,13 @@ module.exports = function(app) {
     app.get("/classes/register", function(req,res) {
         res.sendFile(path.join(__dirname, "../public/html/teacher.html"));
     });
-  
+
+    
+    // Route to Create a User Page
+    app.get("/users/register", function(req,res) {
+        res.sendFile(path.join(__dirname, "../public/html/signUp.html"));
+    });
+    
     app.get("/api/key", function(req, res) {
       res.json(
         {
