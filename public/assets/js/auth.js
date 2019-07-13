@@ -5,11 +5,13 @@ $(function() {
      Global Variables
   */ 
 
-  var loginBtn = $("#signIn");
-  var signUpBtn = $("#signUp");
-  var signInModal = $("#signInModal");
-  var signInError = $("#signInError");
-  var navSignInOut = $("#navSignInOut");
+  var inputEmail = $("#userEmail");
+  var inputPassword = $("#userPassword");
+  var loginBtn = $("#signIn"); //Login user through modal
+  var signUpBtn = $("#signUp"); //Register user on sign up page
+  var signInModal = $("#signInModal"); //the modal to open
+  var signInError = $("#signInError"); //Prompt to change
+  var navSignInOut = $("#navSignInOut"); //opens modal
 
 
 
@@ -51,32 +53,30 @@ $(function() {
         else if (err.code === "auth/wrong-password") { signInError.text("Invalid password, please try again.") }
         else if (err.code === "auth/invalid-email") { signInError.text("Invalid email format! Proper format example: username@gmail.com") }
         else if (err.code === "auth/operation-not-allowed") return console.log("DEV TEAM: Enable Email/Pass Auth in Firebase Settings");
-
       })
     }
     
-    function getAccountData() {
-      var inputs = $('#myForm :input');
-      inputs.each(function () {
-        values[this.name] = $(this).val();
-      });
+    function getAccountData(cb) {
+      var email = inputEmail.val().trim();
+      var pass = inputPassword.val().trim();
 
-      if (!values.email) signInError.text("Make sure to fill in your email!")
-      else if (!values.password) signInError.text("Make sure to fill in your password!")
-      else return values;
+      if (!email) return signInError.text("Make sure to fill in your email!")
+      else if (!pass) return signInError.text("Make sure to fill in your password!")
+      else cb({email: email, pass: pass});
     }
 
     //The sign in/out button within the nav bar, changes function based on the text of the button.
     navSignInOut.on("click", function(event) {
-      if (navSignInOut.prop("value") === "Sign In") signInModal.show("slow");
+      if (navSignInOut.text() === "Sign In") signInModal.show("slow");
       else auth.signOut();
     })
 
     //The login button within the sign in modal
     loginBtn.on("click", function (event) {
       event.preventDefault();
-      var values = getAccountData();
-      if (values) signIntoSite(values)
+      getAccountData(function(values) {
+        if (values) signIntoSite(values)
+      });
     })
     
     //The sign up button within the sign in modal
@@ -89,14 +89,15 @@ $(function() {
     //Whenever the account changes state between signed in / out
     auth.onAuthStateChanged((user) => {
       if (user) {
-        console.log(`${user.name} just logged in.`);
+        console.log(`${user.email} just logged in.`);
+        signInModal.hide("slow")
         //On the next click the button will sign out
-        navSignInOut.prop("value", "Sign Out");
+        navSignInOut.text("Sign Out");
       }
       else {
         console.log(`User needs to sign in.`); 
         //On the next click the button will sign in
-        navSignInOut.prop("value", "Sign In");
+        navSignInOut.text("Sign In");
       }
     })//End of changeState listener
 
