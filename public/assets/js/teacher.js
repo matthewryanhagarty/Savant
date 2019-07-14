@@ -10,42 +10,46 @@ $(function() {
 
   var submitBtn = $("#class-submit");
   var submitError = $("#submitError")
-  var classTitle = $("#classTitle");
-  var classDesc = $("#classDesc");
-  var classCateg = $("#classCateg");
-  var classTime = $("#classTime");
-  var ytLink = $("#ytLink");
-  
+
   submitBtn.on("click", function(event) {
     event.preventDefault();
+    var classTitle = $("#classTitle").val().trim();
+    var classDesc = $("#classDesc").val().trim();
+    var classCateg = $("#classCateg").val().trim();
+    var classTime = $("#classTime").val().trim();
 
     //validations
     var uuid = sessionStorage.getItem("uuid-savant");
     
     var warnPrompt = "";
+    var dateTime = moment(classTime, "MM-DD-YYYY HH:mm a");
     if (!uuid) warnPrompt += "You need to sign in!\n"
     if (!classTitle) warnPrompt += "Add a title\n"
     if (!classDesc) warnPrompt += "Add a description\n"
     if (!classCateg) warnPrompt += "Choose a category\n"
     if (!classTime) warnPrompt += "Add a class timing\n"
-    if (!ytLink) warnPrompt += "Add your youtube embed\n";
+    if (!dateTime) warnPrompt += "Please re-select your date & time for the proper format!"
     
+    var sendObj = {
+      title: classTitle,
+      desc: classDesc,
+      date: new Date(dateTime),
+      categ: classCateg,
+      teacher: uuid
+    };
+
+    console.log(sendObj);
     
     if (warnPrompt == "") {
-
+      
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/classes/register",
         dataType: "json",
-        data: {
-          title: classTitle,
-          desc: classDesc,
-          date: classTime,
-          liveLink: ytLink,
-          categ: classCateg,
-          teacher: uuid
-        }, success: function (data) {
+        data: sendObj, success: function (data) {
           console.log(data);
+          if (data.status) location.href="/"
+//TODO    redirect to profile instead
         }
       });
 
