@@ -11,6 +11,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
+
+    
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+        
+    <script src="../assets/js/auth.js"></script>
 </head>
 
 <body>
@@ -98,16 +104,16 @@
             <div class="col-12 make-class">
                 <form>
                     <div class="form-group  align-items-center">
-                        <label for="formGroupExampleInput">Class Title:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex: JavaScript for Beginners">
+                        <label for="classTitle">Class Title:</label>
+                        <input type="text" class="form-control" id="classTitle" placeholder="ex: JavaScript for Beginners">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Class Description:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ex: This class is an introduction to JavaScript function ...">
+                        <label for="classDesc">Class Description:</label>
+                        <input type="text" class="form-control" id="classDesc" placeholder="ex: This class is an introduction to JavaScript function ...">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Class Category:</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="classCateg">Class Category:</label>
+                        <select class="form-control" id="classCateg">
                             <option>Programming</option>
                             <option>Salad</option>
                             <option>Mathematics</option>
@@ -122,8 +128,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Date & Time of Class:</label>
-                        <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
+                        <label for="classTime">Date & Time of Class:</label>
+                        <div class="input-group date" id="classTime" data-target-input="nearest">
                             <input type="text" class="form-control datetimepicker-input"
                                 data-target="#datetimepicker6" />
                             <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
@@ -132,13 +138,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput3">Your YouTube Embedded Live Link:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Place embedded link here">
+                        <label for="ytLink">Your YouTube Embedded Live Link:</label>
+                        <input type="text" class="form-control" id="ytLink" placeholder="Place embedded link here">
                     </div>
                     <br>
                     <button class="btn btn-outline-secondary" id="class-submit" type="submit">Submit Class</button>
+                    <p id="submitError">Please hit submit to continue.</p>
                 </form>
             </div>
+            <br>
         </div>
     </div>
     <!-- // card end // -->
@@ -156,10 +164,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-
-    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/teacher.js"></script>
 
 </body>
 

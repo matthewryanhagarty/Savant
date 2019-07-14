@@ -1,5 +1,6 @@
 require('dotenv').config();
 var path = require("path");
+var uuid = require("uuid/v4");
 var db = require("../models");
 
 module.exports = function(app) {
@@ -84,10 +85,12 @@ module.exports = function(app) {
           liveLink: req.body.liveLink,
           teacher: req.body.teacher,
           categ: req.body.categ,
-          uuid: req.body.uuid
+          uuid: uuid()
         })
           .then(function(dbClass) {
-            res.json(dbClass);
+            // res.json(dbClass);
+            console.log(dbClass);
+            
           });
     });
     
