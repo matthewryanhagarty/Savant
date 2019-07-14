@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         date: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 isDate: true
@@ -23,10 +23,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         liveLink: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isUrl: true
-            }
+            allowNull: false
         },
         teacher: {
             type: DataTypes.STRING,
@@ -36,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2, 10]
+                len: [2, 100]
             }
         },
         uuid: {

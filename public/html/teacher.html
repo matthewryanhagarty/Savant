@@ -2,15 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Savant</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- 
+            Scripts are needed to load here, 
+        in order for date-picker to work in body 
+    -->
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+    <!-- Tempus Dominus Bootstrap DatePicker JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+    <!-- Tempus Dominus Bootstrap DatePicker CSS -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
+
+    <!-- Firebase Auths -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+
+    <!-- Custom Scripts -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/auth.js"></script>
 </head>
 
 <body>
@@ -98,16 +138,16 @@
             <div class="col-12 make-class">
                 <form>
                     <div class="form-group  align-items-center">
-                        <label for="formGroupExampleInput">Class Title:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ex: JavaScript for Beginners">
+                        <label for="classTitle">Class Title:</label>
+                        <input type="text" class="form-control" id="classTitle" placeholder="ex: JavaScript for Beginners">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Class Description:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ex: This class is an introduction to JavaScript function ...">
+                        <label for="classDesc">Class Description:</label>
+                        <input type="text" class="form-control" id="classDesc" placeholder="ex: This class is an introduction to JavaScript function ...">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Class Category:</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="classCateg">Class Category:</label>
+                        <select class="form-control" id="classCateg">
                             <option>Programming</option>
                             <option>Salad</option>
                             <option>Mathematics</option>
@@ -122,44 +162,25 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Date & Time of Class:</label>
-                        <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input"
-                                data-target="#datetimepicker6" />
-                            <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                        <label for="classTime">Date & Time of Class:</label>
+                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" id="classTime" disable="disable" data-target="#datetimepicker1" />
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput3">Your YouTube Embedded Live Link:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Place embedded link here">
-                    </div>
                     <br>
-                    <button class="btn btn-outline-secondary" id="class-submit" type="submit">Submit Class</button>
+                    <p id="submitError">Please hit submit to continue.</p>
                 </form>
+                <button class="btn btn-outline-secondary" id="class-submit" type="submit">Submit Class</button>
             </div>
+            <br>
         </div>
     </div>
     <!-- // card end // -->
 
-    <!-- // script tags // -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-
-    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/teacher.js"></script>
 
 </body>
 
