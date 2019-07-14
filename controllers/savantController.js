@@ -20,7 +20,11 @@ module.exports = function(app) {
     app.get("/users/register", function(req,res) {
         res.sendFile(path.join(__dirname, "../public/html/signUp.html"));
     });
-    
+
+    app.get("/users/profile", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/html/user.html"));
+    });
+
     app.get("/api/key", function(req, res) {
       res.json(
         {
