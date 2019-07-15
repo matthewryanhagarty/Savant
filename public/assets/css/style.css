@@ -70,6 +70,12 @@ body {
   position: absolute;
 }
 
+#carouselExampleControls {
+
+margin: 0 auto;
+
+}
+
 /* .next {
   margin: 0 auto;
   text-align: center;
