@@ -13,6 +13,7 @@ body {
 
 .navbar {
   width: 100%;
+  
 }
 
 
@@ -154,15 +155,16 @@ body {
     width: 700px;
     border-style: solid;
     border-width: 1px;
+    background-color: white;
   }
 
   .make-class {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .create-a-class {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Literata', serif;
@@ -176,15 +178,16 @@ body {
     width: 700px;
     border-style: solid;
     border-width: 1px;
+    background-color: white;
   }
 
   .sign-up {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .create-user {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Literata', serif;
