@@ -15,6 +15,12 @@ $( function() {
   var signInModal = $("#signInModal"); //the modal to open
   var navSignInOut = $("#navSignInOut"); //opens modal
 
+  //SavedClasses Href uuid
+  $("#savedClasses").on("click", function(event) {
+    var uuid = sessionStorage.getItem("uuid-savant")
+    window.location.href=`/api/users/${uuid}`;
+  })
+
   //If auth has not been declared
   if (firebase.apps.length === 0) {
     //Load in the key from the server
@@ -91,7 +97,7 @@ $( function() {
           if (err.code === "auth/weak-password") {passHelp.text(err.message)}
           else if (err.code === "auth/email-already-in-use") { 
             signIntoSite(values)
-            signUpError.text("Authentication already created, continue."); 
+//            // signUpError.text("Authentication already created, continue."); 
           }
           else console.log(err)
         })

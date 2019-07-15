@@ -1,7 +1,9 @@
 var express = require("express");
+var fileUpload = require("express-fileUpload");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+app.use(fileUpload());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
