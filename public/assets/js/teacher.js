@@ -53,8 +53,8 @@ $(function() {
         dataType: "json",
         data: sendObj, success: function (data) {
           console.log(data);
-          if (data.status) location.href="/"
-//TODO    redirect to profile instead
+          if (data.status) 
+          window.location.href="/users/profile"
         }
       });
 
