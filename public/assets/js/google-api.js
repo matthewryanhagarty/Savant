@@ -64,6 +64,7 @@ handleClientLoad();
       }
 
       async function insertEvent(title,description,date) {
+        console.log("IM IN BOIS", `title: ${title}\nDesc: ${description}\nDate: ${date}`)
         var event = {
     'summary': title,
     'location': 'n/a',
@@ -94,15 +95,15 @@ var request = gapi.client.calendar.events.insert({
 });
 
 };
-$(document).on("click",".calendar",function(){
+  $(document).on("click",".calendar",function(){
     var title = $(this).attr("data-title");
     var description = $(this).attr("data-desc");
     var date = $(this).attr("data-date");
     console.log("title", title);
     console.log("description" , description);
     console.log ("date", date);
-            gapi.auth2.getAuthInstance().signIn();
-            insertEvent(title,description,date);
-       $(this).attr("src","../assets/images/check.png");
-});
+    gapi.auth2.getAuthInstance().signIn();
+    insertEvent(title,description,date);
+    $(this).attr("src","../assets/images/check.png");
+  });
 });

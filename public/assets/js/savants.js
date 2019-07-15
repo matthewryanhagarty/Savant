@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
     var cardSection = $(".card-section");
-    var wrapperDiv = $(".wrapper");
+    var carousel = $("#carouselExampleControls");
 
     cardSection.hide();
-    wrapperDiv.show();
+    carousel.show();
     renderCards();
 
     var searchSubmit = $("#search-submit");
@@ -12,7 +12,8 @@ $(document).ready(function () {
     searchSubmit.on("click", function (event) {
 
 
-        wrapperDiv.hide();
+
+        carousel.hide();
         cardSection.show();
 
         var searchInput = $("#search-input").val().trim();
@@ -35,8 +36,21 @@ $(document).ready(function () {
 
                     } else {
 
-                        var item = $("<div>");
-                        item.addClass("item")
+                        var title = data[i].title;
+                        var date = data[i].date;
+                        var description = data[i].desc;
+                        var category = data[i].categ;
+                        var youtube = data[i].liveLink;
+
+
+                        var button = $("<button>Add Class</button>")
+                        button.addClass("btn btn-outline-secondary add-class")
+
+                        var calendar = $("<img src='../assets/images/calendar.png'></img>");
+                        calendar.addClass("calendar");
+                        calendar.attr("data-title",title);
+                        calendar.attr("data-desc",description);
+                        calendar.attr("data-date", date);
 
                         var card = $("<div>");
                         card.addClass("card");
@@ -44,27 +58,23 @@ $(document).ready(function () {
                         var cardBody = $("<div>");
                         cardBody.addClass("card-body");
 
-                        // var teacher = data[i].teacher;
-                        var title = data[i].title;
-                        var date = data[i].date;
-                        var description = data[i].desc;
-                        var category = data[i].categ;
-                        var youtube = data[i].liveLink;
-
-                        // console.log(data[i].categ)
+                        var cardFooter = $("<div>")
+                        cardFooter.addClass("card-footer");
 
                         // cardBody.append("<h5>" + teacher + "</h5>");
                         cardBody.append("<h6>" + title + "</h6>");
-                        cardBody.append("<p>" + date + "</p>");
-                        cardBody.append("<p>" + description + "</p>");
                         cardBody.append("<p>" + category + "</p>");
+                        cardBody.append("<p>" + moment(date).format("LLLL") + "</p>");
+                        cardBody.append("<p>" + description + "</p>");
+
+                        // cardFooter.append(button);
+                        cardFooter.append(calendar);
 
                         card.append(youtube);
                         card.append(cardBody);
+                        card.append(cardFooter);
 
-                        item.append(card);
-
-                        cardSection.append(item);
+                        cardSection.append(card);
 
                     }
 
