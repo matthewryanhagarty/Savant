@@ -1,21 +1,26 @@
 $(document).ready(function () {
     var userContainer = $(".user-container");
 
-    function getUser() {
-        var uuid = sessionStorage.getItem("uuid-savant");
-        if (uuid) {
-        $.get("/api/users/" + uuid, function(users) {
-            console.log(users);
-            if (!users || !users.length) {
-                displayEmpty();
-            }
-            else {
-                initializeRows();
-            }
-        })
-    }
-}
-    getUser();
+  $("#savedClasses").on("click", function(event) {
+    var uuid = sessionStorage.getItem("uuid-savant")
+    window.location.href=`/api/users/${uuid}`;
+  })
+
+// $("#savedClasses").on("click",function(){
+//         var uuid = sessionStorage.getItem("uuid-savant")
+//         console.log(uuid);
+//          window.location.href=`/api/users/${uuid}`;
+//         // $.get("/api/users/" + uuid, function(users) {
+//         //     console.log(users);
+//         //     console.log("works");
+//         //     // if (!users || !users.length) {
+//         //     //     displayEmpty();
+//         //     // }
+//         //     // else {
+//         //     //     initializeRows();
+//         //     // }
+//         // })
+//     });
 
 function initializeRows() {
     userContainer.empty();

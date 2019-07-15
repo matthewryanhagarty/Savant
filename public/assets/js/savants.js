@@ -132,11 +132,22 @@ $(document).ready(function () {
                         // var item = $("<div>");
                         // item.addClass("item")
 
+                        // var teacher = data[i-1].teacher;
+                        var title = data[i-1].title;
+                        var date = data[i-1].date;
+                        var description = data[i-1].desc;
+                        var category = data[i-1].categ;
+                        var youtube = data[i-1].liveLink;
+
+
                         var button = $("<button>Add Class</button>")
                         button.addClass("btn btn-outline-secondary")
 
                         var calendar = $("<img src='../assets/images/calendar.png'></img>");
                         calendar.addClass("calendar");
+                        calendar.attr("data-title",title);
+                        calendar.attr("data-desc",description);
+                        calendar.attr("data-date", date);
 
                         var card = $("<div>");
                         card.addClass("card");
@@ -146,13 +157,6 @@ $(document).ready(function () {
 
                         var cardFooter = $("<div>")
                         cardFooter.addClass("card-footer");
-
-                        // var teacher = data[i-1].teacher;
-                        var title = data[i-1].title;
-                        var date = data[i-1].date;
-                        var description = data[i-1].desc;
-                        var category = data[i-1].categ;
-                        var youtube = data[i-1].liveLink;
 
                         // cardBody.append("<h5>" + teacher + "</h5>");
                         cardBody.append("<h6>" + title + "</h6>");
