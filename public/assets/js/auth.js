@@ -17,8 +17,8 @@ $( function() {
 
   //SavedClasses Href uuid
   $("#savedClasses").on("click", function(event) {
-    var uuid = sessionStorage.getItem("uuid-savant")
-    window.location.href=`/api/users/${uuid}`;
+    // var uuid = sessionStorage.getItem("uuid-savant")
+    window.location.href=`/users/profile`;
   })
 
   //If auth has not been declared
