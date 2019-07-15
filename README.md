@@ -43,10 +43,10 @@ ___
 ![Graph]()
 ___
 
-![Drink Selection Page](/assets/Images/screenshots/index-page-screenshot1.png)
-![Priority Selection Page](/assets/Images/screenshots/priority-selection-screenshot.png)
-![Results Page](/assets/Images/screenshots/results-screenshot.png)
-![Google Maps Page](/assets/Images/screenshots/maps-screenshot.png)
+![Landing Page]()
+![Sign Up Page]()
+![Sign In Modal]()
+![Profile Page]()
 
 ___
 
