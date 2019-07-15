@@ -1,16 +1,21 @@
 $(document).ready(function () {
-    var wrapperDiv = $("#wrapper");
+    var cardSection = $(".card-section");
+    var wrapperDiv = $(".wrapper");
 
-    wrapperDiv.empty();
+    cardSection.hide();
+    wrapperDiv.show();
     renderCards();
 
     var searchSubmit = $("#search-submit");
     
     searchSubmit.on("click", function (event) {
+
+
+        wrapperDiv.hide();
+        cardSection.show();
+
         var searchInput = $("#search-input").val().trim();
         event.preventDefault();
-
-        wrapperDiv.empty();
 
         $.ajax({
             type: "GET",
@@ -25,7 +30,7 @@ $(document).ready(function () {
                     if (data.length === 0) {
                         var noResult = $("<h3>")
                         noResult.html("Unfortunately, no classes exist")
-                        wrapperDiv.append(noResult)
+                        cardSection.append(noResult)
 
                     } else {
 
@@ -56,7 +61,7 @@ $(document).ready(function () {
 
                         item.append(card);
 
-                        wrapperDiv.append(item);
+                        cardSection.append(item);
 
                     }
 
