@@ -94,6 +94,8 @@ module.exports = function(app, Sequelize) {
           teacher: req.body.teacher,
           categ: req.body.categ,
           uuid: uuid()
+        }).then(function() {
+            res.json({status:true})
         })
     });
     
