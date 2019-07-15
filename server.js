@@ -6,11 +6,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-require("./controllers/savantController")(app);
-require("./controllers/userController")(app);
 var db = require("./models")
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
+  require("./controllers/savantController")(app, db.Sequelize);
+  require("./controllers/userController")(app, db.Sequelize);
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });

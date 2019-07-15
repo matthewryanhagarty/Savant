@@ -3,8 +3,8 @@ var path = require("path");
 var uuid = require("uuid/v4");
 var db = require("../models");
 
-module.exports = function(app) {
-
+module.exports = function(app, Sequelize) {
+    const Op = Sequelize.Op;
     // Route to Landing Page
     app.get("/", function(req,res){
         res.sendFile(path.join(__dirname, "../public/html/index.html"));
@@ -39,18 +39,26 @@ module.exports = function(app) {
     app.get("/api/classes", function(req,res) {
         db.Classes.findAll({})
             .then(function(dbClasses){
+               
+                console.log(dbClasses);
+                
                 res.json(dbClasses);
             });
     });
 
     // Search Specific Class
     app.get("/api/classes/find/:title", function(req,res) {
-        db.User.findAll({
+        db.Classes.findAll({
             where: {
-                title: req.params.title
+                title: {
+                    [Op.like]: `%${req.params.title}%`
+                }
             }
         })
             .then(function(dbClass){
+                console.log("Finished QUery");
+                console.log(dbClass);
+                
                 res.json(dbClass);
             });
         });
