@@ -69,12 +69,12 @@ body {
   position: absolute;
 }
 
-.next {
+/* .next {
   margin: 0 auto;
   text-align: center;
-}
+} */
 
-.section1 {
+/* .section1 {
   max-height: 1px; 
 }
 
@@ -88,33 +88,21 @@ body {
 
 .card-section1 {
   margin: 0 auto;
-  /* overflow: scroll; */
   text-align: center;
 }
 
 .card-section2 {
   margin: 0 auto;
-  /* overflow: scroll; */
   text-align: center;
 }
 
 .card-section3 {
   margin: 0 auto;
-  /* overflow: scroll; */
   text-align: center;
-}
+} */
 
-.arrow__btn-left {
-  height: 10px;
-  width: 10px;
-}
 
-.arrow__btn-right {
-  height: 10px;
-  width: 10px;
-}
-
-.wrapper {
+/* .carousel-inner {
     scroll-behavior: smooth;
     display: grid;
     margin: 0 auto;
@@ -124,27 +112,21 @@ body {
     scroll-behavior: smooth;
     height: 650px !important;
 
-  }
+  } */
   /* .wrapper section {
     max-height: 1px;  
   } */
 
 
-  .wrapper section .item {
+  /* .wrapper section .item {
     padding: 0 2px;
     transition: 250ms all;
   }
   .wrapper section .item:hover {
-    /* margin: 0 40px; */
     transform: scale(1.2);
   }
   .wrapper section a {
     position: relative;
-    /* color: #fff; */
-    /* text-decoration: none; */
-    /* font-size: 6em;
-    width: 80px; */
-    /* padding: 20px; */
     text-align: center;
     z-index: 0;
   }
@@ -157,7 +139,7 @@ body {
     top: 0;
     bottom: 0;
     right: 0;
-  }
+  } */
 
   iframe {
     height: 200px !important;
