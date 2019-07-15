@@ -38,6 +38,7 @@ $(document).ready(function () {
     }
     getUser();
 
+
 function initializeRows() {
     userContainer.empty();
     var userToAdd = [];
