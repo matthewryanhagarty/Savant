@@ -36,6 +36,7 @@ ___
 * [YouTube API](https://developers.google.com/youtube/v3/)
 * [Google Calendar API](https://developers.google.com/calendar/)
 * [AWS S3 Buckets](https://aws.amazon.com/s3/)
+* [Path](https://www.npmjs.com/package/path)
 
 
 ![Commits]()
