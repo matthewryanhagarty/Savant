@@ -1,20 +1,41 @@
 $(document).ready(function () {
     var userContainer = $(".user-container");
+    var userProfile = $(".user-profile");
 
-    function getUser() {
-        var uuid = sessionStorage.getItem("uuid-savant");
+    async function getUser() {
+        var uuid = await sessionStorage.getItem("uuid-savant");
+        console.log(uuid);
+        
         if (uuid) {
-        $.get("/api/users/" + uuid, function(users) {
-            console.log(users);
-            if (!users || !users.length) {
-                displayEmpty();
-            }
-            else {
-                initializeRows();
-            }
-        })
+            $.get("/api/users/" + uuid, function(users) {
+                console.log(users);
+                // if (!users || !users.length) {
+                //     displayEmpty();
+                // }
+                // else {
+                //     initializeRows(user);
+                // }
+                if (users.length != 0) {
+                    var profile = $("<div>");
+
+                    var pic = $("<img>");
+                    pic.attr("src", users.avatar);
+                    pic.addClass("profilePic")
+
+                    profile.append( pic );
+                    profile.append(`<br><br>`)
+                    profile.append( $("<h2>").append(users.name) );
+                    profile.append( $("<p>").append(users.email) );
+                    profile.append( $("<p>").append( users.contact ) );
+
+
+
+                    userProfile.append(profile)
+
+                }
+            })
+        }
     }
-}
     getUser();
 
 function initializeRows() {

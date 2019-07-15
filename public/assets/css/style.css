@@ -203,6 +203,18 @@ float: right;
     border-width: 1px;
   }
 
+  .profilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    float: left;
+    padding: 40px;
+  }
+
+  .user-profile {
+    margin: auto;
+    width: 50%;
+  }
   
   @media only screen and (max-width: 600px) {
     a.arrow__btn {

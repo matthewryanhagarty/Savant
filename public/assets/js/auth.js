@@ -138,7 +138,7 @@ $( function() {
           console.log(`User needs to sign in.`); 
           //On the next click the button will sign in
           navSignInOut.text("Sign In");
-          sessionStorage.removeItem("uuid-savant")
+          // sessionStorage.removeItem("uuid-savant")
         }
       })//End of changeState listener
 
