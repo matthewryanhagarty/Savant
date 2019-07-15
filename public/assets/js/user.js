@@ -2,8 +2,10 @@ $(document).ready(function () {
     var userContainer = $(".user-container");
 
     function getUser() {
-        $.get("/users/profile", function(data) {
-            users = data;
+        var uuid = sessionStorage.getItem("uuid-savant");
+        if (uuid) {
+        $.get("/api/users/" + uuid, function(users) {
+            console.log(users);
             if (!users || !users.length) {
                 displayEmpty();
             }
@@ -12,13 +14,14 @@ $(document).ready(function () {
             }
         })
     }
+}
     getUser();
 
 function initializeRows() {
     userContainer.empty();
     var userToAdd = [];
-    for (var i = 0; i < users.length; i++) {
-        userToAdd.push(createNewRow(users[i]));
+    for (var i = 0; i < classes.length; i++) {
+        userToAdd.push(createNewRow(classes[i]));
     }
     userContainer.append(userToAdd);
 }
@@ -30,7 +33,7 @@ function createNewRow(user) {
     newUserCardHeading.addClass("card-header");
     var newUserName = $("<h2>");
     newUserName.text(users.name);
-    console.log(users.name);
+    // console.log(users.name);
     newUserName.css({
       float: "right",
       "font-weight": "700",
@@ -42,6 +45,11 @@ function createNewRow(user) {
     userCardBody.append(newUserName);
     newUserCard.append(userCardBody);
 }
+
+function teachingClasses() {
+    $.get("/api/users/:uuid")
+}
+
 
 function displayEmpty() {
     userContainer.empty();

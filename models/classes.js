@@ -41,5 +41,10 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         } 
     });
+    Classes.associate = function(models) {
+        Classes.belongsTo(models.User, {
+        });
+    };
+
     return Classes;
 };

@@ -60,19 +60,24 @@ module.exports = function(app) {
         });
 
     // Display All Users
-    app.get("/api/users", function(req,res) {
-        db.User.findAll({})
-        .then(function(dbUser){
-            res.json(dbUser);
-        });
-    });
+    // app.get("/api/users/:uuid", function(req,res) {
+    //     db.User.findAll({
+    //         where: {
+    //             uuid: req.params.uuid
+    //         }
+    //     })
+    //     .then(function(dbUser){
+    //         res.json(dbUser);
+    //     });
+    // });
 
     // Search Specific User
-    app.get("/api/users/:name", function(req,res) {
-        db.User.findAll({
+    app.get("/api/users/:uuid", function(req,res) {
+        db.User.findOne({
             where: {
-                name: req.params.name
-            }
+                name: req.params.uuid
+            },
+            include: [db.Classes]
         })
             .then(function(dbUser){
                 res.json(dbUser);
