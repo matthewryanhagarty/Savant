@@ -5,12 +5,12 @@ ___
 
 ### Design
 
-Our front-end design was meant to spark user interest and interactivity. The design highlights binary user choice, limiting user options, and providing a smaller scope allowing for quicker, more conscise decisions. Our intent for this design choice was to prevent the user from being indundated from too many choices and to aid those in our generation who suffer from "analysis-paralysis".
+
 
 
 ### Logic
 
-The basic logic flow of this web-based application begins with the user-input. The user inputs their parameters for their search, thus dynamically generating their final search query. That search query, once its parameters are completed, is used to perform an Ajax call to the Yelp API to return a JSON object with data to leveraged for rendering on the page. But before all of our information is rendered onto the page, we take location data from the Ajax call and send a requeste to the Google Maps API to dynamically generate a Javascript map w/ markers according to the location of the businesses received from the Yelp API.
+
 
 
 
