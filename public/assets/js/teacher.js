@@ -55,6 +55,7 @@ $(function() {
           console.log(data);
           if (data.status) 
           window.location.href="/users/profile"
+
         }
       });
 

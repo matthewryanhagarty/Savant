@@ -1,40 +1,126 @@
+/* 
+.middle-btn-right {
+float: left;
+}
+
+.middle-btn-left {
+float: right;
+} */
+
+/* body {
+  background: url(../images/background1.jpg);
+} */
+
+.middle-image {
+  height: 80%;
+  width: 80%;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#logo {
+  border-style: solid;
+  border-width: 1px;
+}
 
 .card {
-    height:400px !important;
-    width: 200px !important;
+    height: 500px !important;
+    width: 325px !important;
     margin: 0 auto;
     margin-bottom: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-right: 20px;
+    margin-left: 20px;
     position: relative;
+    float: left;
+    overflow: scroll;
 }
 
 .card-body {
 
-  height: 100% !important;
-  width: 100% !important;
+  /* height: 100% !important;
+  width: 100% !important; */
   position: relative;
   overflow: scroll;
 
 }
+
+.calendar {
+  height:40px;
+  width: 40px;
+  float: right;
+  /* margin-left:10px; */
+}
+
+.cardFooter {
+  position: absolute;
+}
+
+.next {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-section1 {
+  margin: 0 auto;
+}
+
+.card-section2 {
+  margin: 0 auto;
+}
+
+.card-section3 {
+  margin: 0 auto;
+}
+
+#card-section1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#card-section2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#card-section3 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.arrow__btn-left {
+  height: 10px;
+  width: 10px;
+}
+
+.arrow__btn-right {
+  height: 10px;
+  width: 10px;
+}
+
 .wrapper {
     scroll-behavior: smooth;
     display: grid;
+    margin: 0 auto;
+    margin-bottom: 20px;
     grid-template-columns: repeat(3, 100%);
     overflow: hidden;
     scroll-behavior: smooth;
-    height: 500px !important;
-    /* border-style: solid;
-    border-width: 1px;
-    margin: 4 4 4 4; */
+    height: 600px !important;
 
   }
-  .wrapper section {
-    width: 100%;
+  /* .wrapper section {
+    width: 100vw;
     position: relative;
+    overflow: scroll;
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    margin: 20px 0;
-  }
+    grid-template-columns: repeat(3);
+    margin: 10px 0;
+    margin: 0 auto;
+  } */
+
+
   .wrapper section .item {
     padding: 0 2px;
     transition: 250ms all;
@@ -66,7 +152,7 @@
 
   iframe {
     height: 200px !important;
-    width: 200px !important;
+    width: 325px !important;
   }
 
   .teacher {

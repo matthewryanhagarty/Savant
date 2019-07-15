@@ -26,6 +26,7 @@ module.exports = function(app, Sequelize) {
     app.get("/users/register", function(req,res) {
         res.sendFile(path.join(__dirname, "../public/html/signUp.html"));
     });
+
     
     // Route to Create a User Acc
     app.post("/api/users/register", function(req,res) {
@@ -82,6 +83,12 @@ module.exports = function(app, Sequelize) {
         }
     });
     
+
+
+    app.get("/users/profile", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/html/user.html"));
+    });
+
     app.get("/api/key", function(req, res) {
       res.json(
         {
@@ -125,19 +132,24 @@ module.exports = function(app, Sequelize) {
         });
 
     // Display All Users
-    app.get("/api/users", function(req,res) {
-        db.User.findAll({})
-        .then(function(dbUser){
-            res.json(dbUser);
-        });
-    });
+    // app.get("/api/users/:uuid", function(req,res) {
+    //     db.User.findAll({
+    //         where: {
+    //             uuid: req.params.uuid
+    //         }
+    //     })
+    //     .then(function(dbUser){
+    //         res.json(dbUser);
+    //     });
+    // });
 
     // Search Specific User
     app.get("/api/users/:uuid", function(req,res) {
-        db.User.findAll({
+        db.User.findOne({
             where: {
-                uuid: req.params.uuid
-            }
+                name: req.params.uuid
+            },
+            include: [db.Classes]
         })
             .then(function(dbUser){
                 res.json(dbUser);
@@ -155,6 +167,8 @@ module.exports = function(app, Sequelize) {
           teacher: req.body.teacher,
           categ: req.body.categ,
           uuid: uuid()
+        }).then(function() {
+            res.json({status:true})
         })
     });
     

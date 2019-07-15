@@ -44,14 +44,16 @@ $(document).ready(function () {
                         var cardBody = $("<div>");
                         cardBody.addClass("card-body");
 
-                        var teacher = data[i].teacher;
+                        // var teacher = data[i].teacher;
                         var title = data[i].title;
                         var date = data[i].date;
                         var description = data[i].desc;
                         var category = data[i].categ;
                         var youtube = data[i].liveLink;
 
-                        cardBody.append("<h5>" + teacher + "</h5>");
+                        // console.log(data[i].categ)
+
+                        // cardBody.append("<h5>" + teacher + "</h5>");
                         cardBody.append("<h6>" + title + "</h6>");
                         cardBody.append("<p>" + date + "</p>");
                         cardBody.append("<p>" + description + "</p>");
@@ -91,30 +93,50 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 
-                var sectionCount = 1;
+                // var sectionCount = 1;
                 if (data.length > 0) {
                     data.length <= 9 ? lengthCards = data.length : lengthCards = 9;
                     
-                    var newSection = $(`<div id='section${sectionCount}'>`);
+                    var newSection; //= $(`<div id='section${sectionCount}'>`);
+
                     for (i = 1; i <= lengthCards; i++) {
 
-                        if (i % 3 === 0 && i < lengthCards) {
-                            // newSection.append(`<a href="#section${sectionCount > 1 ? sectionCount - 1 : ''}" class="arrow__btn">></a>`)
+                        if (i < 4) {
+                            newSection = $(".card-section1")
 
-                            newSection.append(`<a href="#section${sectionCount + 1}" class="arrow__btn">></a>`)
+                        } else if 
+                        (i < 7) {
+                            newSection = $(".card-section2")
 
-                            wrapperDiv.append(newSection);
-
-                            sectionCount++;
-
-                            newSection = $(`<div id='section${sectionCount}'>`)
-                            
-                            newSection.append(`<a href="#section${sectionCount - 1}" class="arrow__btn"><</a>`)
+                        } else if
+                        (i < 10) {
+                            newSection = $(".card-section3")
 
                         }
 
-                        var item = $("<div>");
-                        item.addClass("item")
+                        // if (i % 3 === 0 && i < lengthCards) {
+                        //     // newSection.append(`<a href="#section${sectionCount > 1 ? sectionCount - 1 : ''}" class="arrow__btn">></a>`)
+
+                        //     newSection.append(`<a href="#section${sectionCount + 1}" class="arrow__btn">></a>`)
+
+                        //     wrapperDiv.append(newSection);
+
+                        //     sectionCount++;
+
+                        //     newSection = $(`<div id='section${sectionCount}'>`)
+                            
+                        //     newSection.append(`<a href="#section${sectionCount - 1}" class="arrow__btn"><</a>`)
+
+                        // }
+
+                        // var item = $("<div>");
+                        // item.addClass("item")
+
+                        var button = $("<button>Add Class</button>")
+                        button.addClass("btn btn-outline-secondary")
+
+                        var calendar = $("<img src='../assets/images/calendar.png'></img>");
+                        calendar.addClass("calendar");
 
                         var card = $("<div>");
                         card.addClass("card");
@@ -122,26 +144,35 @@ $(document).ready(function () {
                         var cardBody = $("<div>");
                         cardBody.addClass("card-body");
 
-                        var teacher = data[i-1].teacher;
+                        var cardFooter = $("<div>")
+                        cardFooter.addClass("card-footer");
+
+                        // var teacher = data[i-1].teacher;
                         var title = data[i-1].title;
                         var date = data[i-1].date;
                         var description = data[i-1].desc;
-                        var category = data[i-1].category;
-                        var youtube = data[i-1].youtube;
+                        var category = data[i-1].categ;
+                        var youtube = data[i-1].liveLink;
 
-                        cardBody.append("<h5>" + teacher + "</h5>");
+                        // cardBody.append("<h5>" + teacher + "</h5>");
                         cardBody.append("<h6>" + title + "</h6>");
-                        cardBody.append("<p>" + date + "</p>");
-                        cardBody.append("<p>" + description + "</p>");
                         cardBody.append("<p>" + category + "</p>");
+                        cardBody.append("<p>" + moment(date).format("LLLL") + "</p>");
+                        cardBody.append("<p>" + description + "</p>");
+
+                        cardFooter.append(button);
+                        cardFooter.append(calendar);
 
                         card.append(youtube);
                         card.append(cardBody);
+                        card.append(cardFooter);
 
-                        item.append(card);
-                        newSection.append(item)
+                        newSection.append(card)
+
+                        wrapperDiv.append(newSection);
+
                     }
-                    wrapperDiv.append(newSection);
+
                 }
             }
         });
