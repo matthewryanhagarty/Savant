@@ -7,9 +7,14 @@ float: left;
 float: right;
 } */
 
-/* body {
+body {
   background: url(../images/background1.jpg);
-} */
+}
+
+.navbar {
+  width: 100%;
+}
+
 
 .middle-image {
   height: 80%;
@@ -24,9 +29,13 @@ float: right;
   border-width: 1px;
 }
 
+.motto {
+  margin-bottom: 0px;
+}
+
 .card {
     height: 500px !important;
-    width: 325px !important;
+    width: 250px !important;
     margin: 0 auto;
     margin-bottom: 20px;
     /* margin-top: 20px; */
@@ -34,7 +43,6 @@ float: right;
     margin-left: 20px;
     position: relative;
     float: left;
-    overflow: scroll;
 }
 
 .card-body {
@@ -42,8 +50,12 @@ float: right;
   /* height: 100% !important;
   width: 100% !important; */
   position: relative;
-  overflow: scroll;
+  /* overflow: scroll; */
 
+}
+
+.add-class {
+  float: left;
 }
 
 .calendar {
@@ -62,30 +74,33 @@ float: right;
   text-align: center;
 }
 
+.section1 {
+  max-height: 1px; 
+}
+
+.section2 {
+  max-height: 1px; 
+}
+
+.section3 {
+  max-height: 1px; 
+}
+
 .card-section1 {
   margin: 0 auto;
+  /* overflow: scroll; */
+  text-align: center;
 }
 
 .card-section2 {
   margin: 0 auto;
+  /* overflow: scroll; */
+  text-align: center;
 }
 
 .card-section3 {
   margin: 0 auto;
-}
-
-#card-section1 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-#card-section2 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-#card-section3 {
-  margin: 0 auto;
+  /* overflow: scroll; */
   text-align: center;
 }
 
@@ -105,19 +120,13 @@ float: right;
     margin: 0 auto;
     margin-bottom: 20px;
     grid-template-columns: repeat(3, 100%);
-    overflow: hidden;
+    overflow: scroll;
     scroll-behavior: smooth;
-    height: 600px !important;
+    height: 650px !important;
 
   }
   /* .wrapper section {
-    width: 100vw;
-    position: relative;
-    overflow: scroll;
-    display: grid;
-    grid-template-columns: repeat(3);
-    margin: 10px 0;
-    margin: 0 auto;
+    max-height: 1px;  
   } */
 
 
@@ -152,12 +161,13 @@ float: right;
 
   iframe {
     height: 200px !important;
-    width: 325px !important;
+    width: 250px !important;
   }
 
   .teacher {
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 20px;
     height: 550px;
     width: 700px;
     border-style: solid;
@@ -179,6 +189,7 @@ float: right;
   .user-sign-up {
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 20px;
     height: 600px;
     width: 700px;
     border-style: solid;
@@ -203,9 +214,3 @@ float: right;
     border-width: 1px;
   }
 
-  
-  @media only screen and (max-width: 600px) {
-    a.arrow__btn {
-      display: none;
-    }
-  }

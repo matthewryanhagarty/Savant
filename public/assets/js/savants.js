@@ -133,7 +133,7 @@ $(document).ready(function () {
                         // item.addClass("item")
 
                         var button = $("<button>Add Class</button>")
-                        button.addClass("btn btn-outline-secondary")
+                        button.addClass("btn btn-outline-secondary add-class")
 
                         var calendar = $("<img src='../assets/images/calendar.png'></img>");
                         calendar.addClass("calendar");
