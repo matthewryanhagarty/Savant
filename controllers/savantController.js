@@ -85,30 +85,16 @@ module.exports = function(app, Sequelize) {
 
     // Create a New Class
     app.post("/classes/register", function(req,res) {
-
-        function getLiveLink() {
-            var embed;
-//TODO: Add YT API to get link/id/embed
-
-            if (embed) return embed; else return "N/A"
-        }
-
         console.log(req.body);
         db.Classes.create({
           title: req.body.title,
           desc: req.body.desc,
           date: req.body.date,
-          liveLink: getLiveLink(),
+          liveLink: req.body.liveLink,
           teacher: req.body.teacher,
           categ: req.body.categ,
           uuid: uuid()
         })
-          .then(function(dbClass) {
-            // res.sendFile(path.resolve(__dirname,'../public/html/index.html'));
-            // res.sendFile(__dirname, '../public/html/index.html');
-            res.json({status: true});
-            // console.log(dbClass);
-          });
     });
     
 };
