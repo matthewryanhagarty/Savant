@@ -38,7 +38,7 @@ module.exports = function(app, Sequelize) {
             uuid: req.body.uuid,
             classes: req.body.classes
         }).then(function(data) {
-            res.json(req.body)
+            res.json(data)
         })
     });
 
@@ -147,7 +147,7 @@ module.exports = function(app, Sequelize) {
     app.get("/api/users/:uuid", function(req,res) {
         db.User.findOne({
             where: {
-                name: req.params.uuid
+                uuid: req.params.uuid
             },
             include: [db.Classes]
         })

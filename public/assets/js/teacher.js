@@ -27,7 +27,7 @@ $(function() {
     
     var warnPrompt = "";
     var dateTime = moment(classTime, "MM-DD-YYYY HH:mm a");
-    if (!uuid) warnPrompt += "You need to sign in!\n"
+    if (!uuid) warnPrompt += "You need to sign into our website! (Top left).\n"
     if (!classTitle) warnPrompt += "Add a title\n"
     if (!classDesc) warnPrompt += "Add a description\n"
     if (!classCateg) warnPrompt += "Choose a category\n"

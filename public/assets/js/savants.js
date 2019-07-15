@@ -25,7 +25,7 @@ $(document).ready(function () {
             success: function (data) {
                 console.log("received query");
                 console.log(data);
-                
+                cardSection.empty()
                 for (i = 0; i < data.length; i++) {
 
                     if (data.length === 0) {
@@ -98,19 +98,20 @@ $(document).ready(function () {
                     data.length <= 9 ? lengthCards = data.length : lengthCards = 9;
                     
                     var newSection; //= $(`<div id='section${sectionCount}'>`);
+                    console.log(lengthCards);
 
                     for (i = 1; i <= lengthCards; i++) {
 
                         if (i < 4) {
-                            newSection = $(".card-section1")
+                            newSection = $(".carousel-item1")
 
                         } else if 
                         (i < 7) {
-                            newSection = $(".card-section2")
+                            newSection = $(".carousel-item2")
 
                         } else if
                         (i < 10) {
-                            newSection = $(".card-section3")
+                            newSection = $(".carousel-item3")
 
                         }
 
@@ -141,7 +142,7 @@ $(document).ready(function () {
 
 
                         var button = $("<button>Add Class</button>")
-                        button.addClass("btn btn-outline-secondary")
+                        button.addClass("btn btn-outline-secondary add-class")
 
                         var calendar = $("<img src='../assets/images/calendar.png'></img>");
                         calendar.addClass("calendar");
@@ -164,7 +165,7 @@ $(document).ready(function () {
                         cardBody.append("<p>" + moment(date).format("LLLL") + "</p>");
                         cardBody.append("<p>" + description + "</p>");
 
-                        cardFooter.append(button);
+                        // cardFooter.append(button);
                         cardFooter.append(calendar);
 
                         card.append(youtube);
@@ -173,7 +174,7 @@ $(document).ready(function () {
 
                         newSection.append(card)
 
-                        wrapperDiv.append(newSection);
+                        // cardSection.append(newSection);
 
                     }
 

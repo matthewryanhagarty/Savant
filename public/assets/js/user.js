@@ -1,26 +1,43 @@
 $(document).ready(function () {
     var userContainer = $(".user-container");
+    var userProfile = $(".user-profile");
 
-  $("#savedClasses").on("click", function(event) {
-    var uuid = sessionStorage.getItem("uuid-savant")
-    window.location.href=`/api/users/${uuid}`;
-  })
+    async function getUser() {
+        var uuid = await sessionStorage.getItem("uuid-savant");
+        console.log(uuid);
+        
+        if (uuid) {
+            $.get("/api/users/" + uuid, function(users) {
+                console.log(users);
+                // if (!users || !users.length) {
+                //     displayEmpty();
+                // }
+                // else {
+                //     initializeRows(user);
+                // }
+                if (users.length != 0) {
+                    var profile = $("<div>");
 
-// $("#savedClasses").on("click",function(){
-//         var uuid = sessionStorage.getItem("uuid-savant")
-//         console.log(uuid);
-//          window.location.href=`/api/users/${uuid}`;
-//         // $.get("/api/users/" + uuid, function(users) {
-//         //     console.log(users);
-//         //     console.log("works");
-//         //     // if (!users || !users.length) {
-//         //     //     displayEmpty();
-//         //     // }
-//         //     // else {
-//         //     //     initializeRows();
-//         //     // }
-//         // })
-//     });
+                    var pic = $("<img>");
+                    pic.attr("src", users.avatar);
+                    pic.addClass("profilePic")
+
+                    profile.append( pic );
+                    profile.append(`<br><br>`)
+                    profile.append( $("<h2>").append(users.name) );
+                    profile.append( $("<p>").append(users.email) );
+                    profile.append( $("<p>").append( users.contact ) );
+
+
+
+                    userProfile.append(profile)
+
+                }
+            })
+        }
+    }
+    getUser();
+
 
 function initializeRows() {
     userContainer.empty();
