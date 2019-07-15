@@ -25,7 +25,7 @@ $(document).ready(function () {
             success: function (data) {
                 console.log("received query");
                 console.log(data);
-                
+                cardSection.empty()
                 for (i = 0; i < data.length; i++) {
 
                     if (data.length === 0) {
@@ -161,7 +161,7 @@ $(document).ready(function () {
                         cardBody.append("<p>" + moment(date).format("LLLL") + "</p>");
                         cardBody.append("<p>" + description + "</p>");
 
-                        cardFooter.append(button);
+                        // cardFooter.append(button);
                         cardFooter.append(calendar);
 
                         card.append(youtube);

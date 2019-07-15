@@ -17,8 +17,8 @@ $( function() {
 
   //SavedClasses Href uuid
   $("#savedClasses").on("click", function(event) {
-    var uuid = sessionStorage.getItem("uuid-savant")
-    window.location.href=`/api/users/${uuid}`;
+    // var uuid = sessionStorage.getItem("uuid-savant")
+    window.location.href=`/users/profile`;
   })
 
   //If auth has not been declared
@@ -138,7 +138,7 @@ $( function() {
           console.log(`User needs to sign in.`); 
           //On the next click the button will sign in
           navSignInOut.text("Sign In");
-          sessionStorage.removeItem("uuid-savant")
+          // sessionStorage.removeItem("uuid-savant")
         }
       })//End of changeState listener
 

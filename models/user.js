@@ -1,21 +1,24 @@
 module.exports= function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
         name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [5, 255]
-            }
+            type: DataTypes.STRING
+            // ,
+            // allowNull: false
+            // ,
+            // validate: {
+            //     len: [5, 255]
+            // }
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: {
-                    msg: "This is not a valid e-mail."
-                }
-            }
+            unique: true
+            // ,
+            // validate: {
+            //     isEmail: {
+            //         msg: "This is not a valid e-mail."
+            //     }
+            // }
         },
         uuid: {
             type: DataTypes.UUID,
@@ -27,24 +30,26 @@ module.exports= function(sequelize, DataTypes) {
         },
         contact: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [5, 255]
-            }
+            allowNull: false
+            // ,
+            // validate: {
+            //     len: [5, 255]
+            // }
         },
         avatar: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isUrl: true
-            }
+            type: DataTypes.TEXT,
+            allowNull: false
+            // ,
+            // validate: {
+            //     isUrl: true
+            // }
         }
     });
     User.associate = function(models) {
-        
-            User.hasMany(models.Classes, {
-            });
-        
+
+        User.hasMany(models.Classes, {
+        });
+
     };
 
     return User;
