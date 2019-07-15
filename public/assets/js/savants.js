@@ -1,29 +1,36 @@
 $(document).ready(function () {
-    
-    $("#card-section").empty();
+    var cardSection = $(".card-section");
+    var wrapperDiv = $(".wrapper");
+
+    cardSection.hide();
+    wrapperDiv.show();
     renderCards();
 
-    var searchSubmit = $("#search-input").val().trim();
+    var searchSubmit = $("#search-submit");
+    
+    searchSubmit.on("click", function (event) {
 
-    $("#search-submit").on("click", function (event) {
 
-        $(card-section).empty();
+        wrapperDiv.hide();
+        cardSection.show();
+
+        var searchInput = $("#search-input").val().trim();
         event.preventDefault();
-
-        var search = $("#search-input").val().trim();
 
         $.ajax({
             type: "GET",
-            url: "/api/classes/find/" + search,
+            url: "/api/classes/find/" + searchInput,
             dataType: "json",
             success: function (data) {
-
+                console.log("received query");
+                console.log(data);
+                
                 for (i = 0; i < data.length; i++) {
 
                     if (data.length === 0) {
                         var noResult = $("<h3>")
                         noResult.html("Unfortunately, no classes exist")
-                        $("#card-section").append(noResult)
+                        cardSection.append(noResult)
 
                     } else {
 
@@ -40,8 +47,8 @@ $(document).ready(function () {
                         var title = data[i].title;
                         var date = data[i].date;
                         var description = data[i].desc;
-                        var category = data[i].category;
-                        var youtube = data[i].youtube;
+                        var category = data[i].categ;
+                        var youtube = data[i].liveLink;
 
                         cardBody.append("<h5>" + teacher + "</h5>");
                         cardBody.append("<h6>" + title + "</h6>");
@@ -54,7 +61,7 @@ $(document).ready(function () {
 
                         item.append(card);
 
-                        $("#card-section").append(item);
+                        cardSection.append(item);
 
                     }
 
@@ -66,15 +73,14 @@ $(document).ready(function () {
     });
 
 
-});
 
-function findAll() {
-
-
-};
+    function findAll() {
 
 
-function renderCards() {
+    };
+
+    // Carousel Cards
+    function renderCards() {
 
 
         $.ajax({
@@ -82,45 +88,62 @@ function renderCards() {
             url: "/api/classes",
             dataType: "json",
             success: function (data) {
+                console.log(data);
+                
+                var sectionCount = 1;
+                if (data.length > 0) {
+                    data.length <= 9 ? lengthCards = data.length : lengthCards = 9;
+                    
+                    var newSection = $(`<div id='section${sectionCount}'>`);
+                    for (i = 1; i <= lengthCards; i++) {
 
-                for (i = 1; i <= 9; i++) {
+                        if (i % 3 === 0 && i < lengthCards) {
+                            // newSection.append(`<a href="#section${sectionCount > 1 ? sectionCount - 1 : ''}" class="arrow__btn">></a>`)
 
-                    if (i % 3 === 0) {
-                        sectionCount++;
-                        var newSection = $(`<div id='section${sectionCount}'`)
-                            var item = $("<div>");
-                            item.addClass("item")
+                            newSection.append(`<a href="#section${sectionCount + 1}" class="arrow__btn">></a>`)
 
-                            var card = $("<div>");
-                            card.addClass("card");
+                            wrapperDiv.append(newSection);
 
-                            var cardBody = $("<div>");
-                            cardBody.addClass("card-body");
+                            sectionCount++;
 
-                            var teacher = data[i-1].teacher;
-                            var title = data[i-1].title;
-                            var date = data[i-1].date;
-                            var description = data[i-1].desc;
-                            var category = data[i-1].category;
-                            var youtube = data[i-1].youtube;
+                            newSection = $(`<div id='section${sectionCount}'>`)
+                            
+                            newSection.append(`<a href="#section${sectionCount - 1}" class="arrow__btn"><</a>`)
 
-                            cardBody.append("<h5>" + teacher + "</h5>");
-                            cardBody.append("<h6>" + title + "</h6>");
-                            cardBody.append("<p>" + date + "</p>");
-                            cardBody.append("<p>" + description + "</p>");
-                            cardBody.append("<p>" + category + "</p>");
+                        }
 
-                            card.append(youtube);
-                            card.append(cardBody);
+                        var item = $("<div>");
+                        item.addClass("item")
 
-                            item.append(card);
+                        var card = $("<div>");
+                        card.addClass("card");
+
+                        var cardBody = $("<div>");
+                        cardBody.addClass("card-body");
+
+                        var teacher = data[i-1].teacher;
+                        var title = data[i-1].title;
+                        var date = data[i-1].date;
+                        var description = data[i-1].desc;
+                        var category = data[i-1].category;
+                        var youtube = data[i-1].youtube;
+
+                        cardBody.append("<h5>" + teacher + "</h5>");
+                        cardBody.append("<h6>" + title + "</h6>");
+                        cardBody.append("<p>" + date + "</p>");
+                        cardBody.append("<p>" + description + "</p>");
+                        cardBody.append("<p>" + category + "</p>");
+
+                        card.append(youtube);
+                        card.append(cardBody);
+
+                        item.append(card);
                         newSection.append(item)
-                        $("#card-section").append(newSection);
                     }
-
-
+                    wrapperDiv.append(newSection);
                 }
             }
         });
 
-}
+    }
+});
