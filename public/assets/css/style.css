@@ -131,7 +131,7 @@ iframe {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
-  height: 550px;
+  height: 545px;
   width: 700px;
   border-style: solid;
   border-width: 1px;
@@ -190,7 +190,14 @@ iframe {
 .user-profile {
   margin: auto;
   width: 50%;
+
 }
+
+.user-profile-page {
+
+  background-color: white;
+}
+
 
 .card-section {
 
