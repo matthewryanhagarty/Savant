@@ -28,26 +28,30 @@ $(function() {
       data: imgCreate, 
       success: function(data) {
         var uid = sessionStorage.getItem("uuid-savant")
-        var usr = {
-          name: name,
-          contact: contact,
-          email: email,
-          avatar: data.Location,
-          uuid: uid,
-          classes: "{}"
+
+        if (uid) {
+          var usr = {
+            name: name,
+            contact: contact,
+            email: email,
+            avatar: data.Location,
+            uuid: uid,
+            classes: "{}"
+          }
+          
+          console.log("ONE", usr);
+          
+            $.ajax({
+              type: "POST",
+              url: "/api/users/register",
+              dataType: "json",
+              data: usr, 
+              success: function(data) {
+                  window.location.href="/users/profile"
+              }
+            })
         }
-        
-        console.log("ONE", usr);
-        
-          $.ajax({
-            type: "POST",
-            url: "/api/users/register",
-            dataType: "json",
-            data: usr, 
-            success: function(data) {
-                window.location.href="/users/profile"
-            }
-          })
+
       }
     })
 

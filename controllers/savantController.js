@@ -131,18 +131,6 @@ module.exports = function(app, Sequelize) {
             });
         });
 
-    // Display All Users
-    // app.get("/api/users/:uuid", function(req,res) {
-    //     db.User.findAll({
-    //         where: {
-    //             uuid: req.params.uuid
-    //         }
-    //     })
-    //     .then(function(dbUser){
-    //         res.json(dbUser);
-    //     });
-    // });
-
     // Search Specific User
     app.get("/api/users/:uuid", function(req,res) {
         db.User.findOne({
@@ -154,6 +142,18 @@ module.exports = function(app, Sequelize) {
             .then(function(dbUser){
                 res.json(dbUser);
             });
+    });
+
+    
+    // Search Specific User's classes taught
+    app.get("/api/users/classes/:uuid", function(req,res) {
+        db.Classes.findAll({
+            where: {
+                teacher: req.params.uuid
+            }
+        }).then(function(classesBeingTaught){
+            res.json(classesBeingTaught);
+        });
     });
 
     // Create a New Class

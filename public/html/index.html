@@ -9,31 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
-   <script src="https://code.jquery.com/jquery-3.4.1.js"
+    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script src="https://apis.google.com/js/api.js"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-        
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script> -->
+        <script src="assets/js/savants.js"></script>
+     <script src="https://apis.google.com/js/api.js"></script>
+
+    
+
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fullwidth">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
+                <img src="../assets/images/AppIconResizer_201907160512_c9ed472386f21a80a8adbd03ff12a0d6/Icon-Small-50.png" class="nav-icon">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -60,7 +58,7 @@
             </div>
         </nav>
     </div>
-   
+
     <!-- // modal // -->
 
     <div id="signInModal" class="modal" tabindex="-1" role="dialog">
@@ -99,8 +97,6 @@
         </div>
     </div>
 
-    <br>
-
     <!-- // first row - button -> logo -> button // -->
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center" style="text-align: center">
@@ -108,18 +104,19 @@
                 <img src="../assets/images/teach1.jpg" class="middle-image">
                 <br>
                 <br>
-                <a href="../html/teacher.html"><button type="button" class="btn btn-secondary btn-lg middle-btn-left animated fadeInLeft">teach a
+                <a href="../html/teacher.html"><button type="button"
+                        class="btn btn-secondary btn-lg middle-btn-left animated fadeInLeft delay-1s">teach a
                         class</button></a>
             </div>
             <div class="col-4">
-                <img src="../assets/images/savant-demo-logo.png" href="/" id="logo" alt="savant-logo"
-                    style="height: 70%; width: 70%;">
+                <img src="../assets/images/savant-logo-resize.jpg" href="/" id="logo" alt="savant-logo">
             </div>
             <div class="col-4">
                 <img src="../assets/images/teach2.jpg" class="middle-image">
                 <br>
                 <br>
-                <button type="button" class="btn btn-secondary btn-lg middle-btn-right animated fadeInRight" id="find-all">learn a skill</button>
+                <button type="button" class="btn btn-secondary btn-lg middle-btn-right animated fadeInRight delay-1s"
+                    id="find-all">learn a skill</button>
             </div>
         </div>
     </div>
@@ -129,67 +126,85 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <br>
-                <pre><h6 class="motto" style="text-align: center">• E D U C A T I O N  •  t h r o u g h  •  O B S E R V A T I O N •</h6></pre>
+                <pre><h6 class="motto animated zoomIn" style="text-align: center">• E D U C A T I O N  •  t h r o u g h  •  O B S E R V A T I O N •</h6></pre>
             </div>
         </div>
     </div>
+
+    <br>
     <br>
 
- <!-- // card section to holder dynamically generated cards // -->
+    <!-- // card section to holder dynamically generated cards // -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="arrow-right">
 
-
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item carousel-item1 active">
-
-                    </div>
-                    <div class="carousel-item carousel-item2">
-
-                    </div>
-                    <div class="carousel-item carousel-item3">
-
-                    </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                    </a>
                     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
+                </div>
+                <div class="arrow-left">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="container carousel-holder">
+        <div class="row">
+            <div class="col-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
-    <!-- // card end // -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item carousel-item1 active">
+                        </div>
+
+                        <div class="carousel-item carousel-item2">
+                        </div>
+
+                        <div class="carousel-item carousel-item3">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- // card section for search // -->
 
     <div class="container-fluid">
         <div class="row">
             <div class="card-section">
-                
+
             </div>
         </div>
     </div>
 
-    <!-- // new slides //  -->
-
 
     <!-- // script tags // -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
 
-     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-
- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
     <script src="assets/js/auth.js"></script>
-        <script src="assets/js/savants.js"></script>
-
     <script src="assets/js/google-api.js"></script>
-
+    
 </body>
 
 </html>

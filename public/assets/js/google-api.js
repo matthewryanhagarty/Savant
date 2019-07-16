@@ -28,43 +28,18 @@ handleClientLoad();
           clientId: CLIENT_ID,
           discoveryDocs: DISCOVERY_DOCS,
           scope: SCOPES
-        }).then(function () {
-          // Listen for sign-in state changes.
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-          // Handle the initial sign-in state.
-          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        }, function(error) {
-          appendPre(JSON.stringify(error, null, 2));
-        });
-      }
-
-      /**
-       *  Called when the signed in status changes, to update the UI
-       *  appropriately. After a sign-in, the API is called.
-       */
-      function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-          console.log("we sign in");
-        } else { 
-            console.log("we did not sign in");
-        }
+        })
       }
 
       /**
        * Append a pre element to the body containing the given message
        * as its text node. Used to display the results of the API call.
        *
-       * @param {string} message Text to be placed in pre element.
+       * //@param {string} message Text to be placed in pre element.
        */
-      function appendPre(message) {
-        var pre = document.getElementById('content');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
-      }
-
       async function insertEvent(title,description,date) {
-        console.log("IM IN BOIS", `title: ${title}\nDesc: ${description}\nDate: ${date}`)
+        console.log("we signed in and is in insertevent");
+        console.log(title,description,date);
         var event = {
     'summary': title,
     'location': 'n/a',
@@ -74,7 +49,7 @@ handleClientLoad();
     'timeZone': 'America/Los_Angeles'
   },
   'end': {
-    'dateTime': new Date(moment(date).endOf("day")),//'2019-07-17T17:00:00-07:00',
+    'dateTime': new Date(moment(date).endOf("day")),
     'timeZone': 'America/Los_Angeles'
   },
   'recurrence': [
@@ -94,16 +69,19 @@ var request = gapi.client.calendar.events.insert({
   'resource': event
 });
 
+request.execute(function(event) {
+});
+
 };
-  $(document).on("click",".calendar",function(){
+$(document).on("click",".calendar",function(){
     var title = $(this).attr("data-title");
     var description = $(this).attr("data-desc");
     var date = $(this).attr("data-date");
     console.log("title", title);
     console.log("description" , description);
     console.log ("date", date);
-    gapi.auth2.getAuthInstance().signIn();
-    insertEvent(title,description,date);
-    $(this).attr("src","../assets/images/check.png");
-  });
+            gapi.auth2.getAuthInstance().signIn();
+            insertEvent(title,description,date);
+       $(this).attr("src","../assets/images/check.png");
+});
 });
