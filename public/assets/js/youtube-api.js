@@ -4,13 +4,16 @@ $("#classDesc").attr("disabled","disabled");
 $("#classCateg").attr("disabled","disabled");
 $("#classTime").attr("disabled","disabled");
 $("#class-submit").hide();
+$(".submit-link").hide();
 $("#class-create-link").hide();
+$(".create-link").hide();
 
 var submitBtn = $("#class-submit");
 var signInBtn = $("#class-signIn");
 var createLinkBtn = $("#class-create-link");
 var title = $("#classTitle").val();
 var date = $("#date").val();
+
 signInBtn.on("click", function(event) {
   event.preventDefault();
   authenticate().then(loadClient);
@@ -19,7 +22,9 @@ signInBtn.on("click", function(event) {
   }
   else{
   signInBtn.hide();
+  $(".signin-link").hide();
   createLinkBtn.show(); 
+  $(".create-link").show();
   $("#classTitle").attr("disabled","disabled");
   $("#classDesc").removeAttr("disabled","disabled");
   $("#classCateg").removeAttr("disabled","disabled");
@@ -35,7 +40,9 @@ createLinkBtn.on("click", function(event) {
   }
   else {
   createLinkBtn.hide(); 
+  $(".create-link").hide();
   submitBtn.show(); 
+  $(".submit-link").show();
   $("#classDesc").attr("disabled","disabled");
   $("#classCateg").attr("disabled","disabled");
   $("#classTime").attr("disabled","disabled");
