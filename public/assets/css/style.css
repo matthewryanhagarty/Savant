@@ -21,6 +21,10 @@ body {
   border-width: 1px;
 }
 
+.navPhoto {
+  border-radius: 50%;
+}
+
 
 .middle-image {
   height: 80%;
@@ -33,9 +37,11 @@ body {
 #logo {
   border-style: solid;
   border-width: 1px;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   mix-blend-mode: multiply;
+  border-radius: 50%;
+  box-shadow: 2.5px 5px rgba(143, 143, 11, 0.712);
 }
 
 .motto {
