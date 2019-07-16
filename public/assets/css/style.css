@@ -8,12 +8,17 @@ float: right;
 } */
 
 body {
-  background: url(../images/background1.jpg);
+  /* background: url(../images/background1.jpg); */
+  background-color: antiquewhite;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 .navbar {
   width: 100%;
-  
+
 }
 
 
@@ -35,7 +40,7 @@ body {
 }
 
 .card {
-    height: 500px !important;
+    height: 475px !important;
     width: 250px !important;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -60,53 +65,45 @@ body {
 }
 
 .calendar {
-  height:40px;
-  width: 40px;
+  height:30px;
+  width: 30px;
   float: right;
   /* margin-left:10px; */
 }
 
 .cardFooter {
   position: absolute;
+  height: 40px;
 }
 
-#carouselExampleControls {
-
-margin: 0 auto;
-
+.carousel-item {
+  margin: 0 auto !important;
+  margin-left: 123px !important;
 }
 
-/* .next {
-  margin: 0 auto;
-  text-align: center;
-} */
-
-/* .section1 {
-  max-height: 1px; 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
 }
 
-.section2 {
-  max-height: 1px; 
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 57px;
+  color: black;
 }
 
-.section3 {
-  max-height: 1px; 
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 57px;
+  color: black;
 }
-
-.card-section1 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card-section2 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card-section3 {
-  margin: 0 auto;
-  text-align: center;
-} */
 
 
 /* .carousel-inner {
@@ -150,7 +147,7 @@ margin: 0 auto;
 
   iframe {
     height: 200px !important;
-    width: 250px !important;
+    width: 248px !important;
   }
 
   .teacher {
