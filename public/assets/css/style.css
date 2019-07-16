@@ -18,6 +18,7 @@ body {
 
 .navbar {
   width: 100%;
+  margin-bottom: 20px;
 
 }
 
@@ -37,11 +38,12 @@ body {
 
 .motto {
   margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .card {
     height: 475px !important;
-    width: 250px !important;
+    width: 225px !important;
     margin: 0 auto;
     margin-bottom: 20px;
     /* margin-top: 20px; */
@@ -78,7 +80,20 @@ body {
 
 .carousel-item {
   margin: 0 auto !important;
-  margin-left: 123px !important;
+  width: 800px;
+  position: relative;
+  /* margin-left: 123px !important; */
+}
+
+.carousel-inner {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#carouselExampleControls {
+  margin: 0 auto;
+  margin-left: 20px;
 }
 
 .carousel-control-prev-icon,
@@ -90,6 +105,8 @@ body {
   border-radius: 50%;
   border: 1px solid black;
   background-image: none;
+  margin: 10px;
+
 }
 
 .carousel-control-next-icon:after
@@ -99,119 +116,84 @@ body {
   color: black;
 }
 
-.carousel-control-prev-icon:after {
+.carousel-control-prev-icon:before {
   content: '<';
   font-size: 57px;
   color: black;
 }
 
+iframe {
+  height: 200px !important;
+  width: 223px !important;
+}
 
-/* .carousel-inner {
-    scroll-behavior: smooth;
-    display: grid;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    grid-template-columns: repeat(3, 100%);
-    overflow: scroll;
-    scroll-behavior: smooth;
-    height: 650px !important;
+.teacher {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 550px;
+  width: 700px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+}
 
-  } */
-  /* .wrapper section {
-    max-height: 1px;  
-  } */
+.make-class {
+  margin-top: 10px;
+}
 
+.create-a-class {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Literata', serif;
+}
 
-  /* .wrapper section .item {
-    padding: 0 2px;
-    transition: 250ms all;
-  }
-  .wrapper section .item:hover {
-    transform: scale(1.2);
-  }
-  .wrapper section a {
-    position: relative;
-    text-align: center;
-    z-index: 0;
-  }
-  .wrapper section a:nth-of-type(1) {
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .wrapper section a:nth-of-type(2) {
-    top: 0;
-    bottom: 0;
-    right: 0;
-  } */
+.user-sign-up {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 600px;
+  width: 700px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+}
 
-  iframe {
-    height: 200px !important;
-    width: 248px !important;
-  }
+.sign-up {
+  margin-top: 10px;
+}
 
-  .teacher {
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 550px;
-    width: 700px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: white;
-  }
+.create-user {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Literata', serif;
+}
 
-  .make-class {
-    margin-top: 10px;
-  }
+.form-control-file {
 
-  .create-a-class {
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Literata', serif;
-  }
+  border-style: solid;
+  border-width: 1px;
+}
 
-  .user-sign-up {
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 600px;
-    width: 700px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: white;
-  }
+.profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  float: left;
+  padding: 40px;
+}
 
-  .sign-up {
-    margin-top: 10px;
-  }
+.user-profile {
+  margin: auto;
+  width: 50%;
+}
 
-  .create-user {
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Literata', serif;
-  }
+.card-section {
 
-  .form-control-file {
-
-    border-style: solid;
-    border-width: 1px;
-  }
-
-  .profilePic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    float: left;
-    padding: 40px;
-  }
-
-  .user-profile {
-    margin: auto;
-    width: 50%;
-  }
+  margin: 0 auto;
+}
   

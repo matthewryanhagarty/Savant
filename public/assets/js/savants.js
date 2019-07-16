@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var cardSection = $(".card-section");
-    var carousel = $("#carouselExampleControls");
+    var carousel = $(".carousel-holder");
 
     cardSection.hide();
     carousel.show();
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 for (i = 0; i < data.length; i++) {
 
                     if (data.length === 0) {
-                        var noResult = $("<h3>")
+                        var noResult = $("<h3>Unfortunately, no classes exist")
                         noResult.html("Unfortunately, no classes exist")
                         cardSection.append(noResult)
 
