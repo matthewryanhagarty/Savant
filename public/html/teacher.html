@@ -19,10 +19,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-        
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -33,16 +33,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
     <!-- Tempus Dominus Bootstrap DatePicker JS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
-    
-    <!-- Tempus Dominus Bootstrap DatePicker CSS -->    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Tempus Dominus Bootstrap DatePicker CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap"
+        rel="stylesheet">
 
     <!-- Firebase Auths -->
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -51,43 +54,45 @@
     <!-- Custom Scripts -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/auth.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Literata|Merriweather|Roboto+Slab&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-        <div class="container-fullwidth">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">
-                        <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
-                    </a>
-        
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#" id="navSignInOut">Sign In<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../html/teacher.html">Teach</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" id="all-classes">Class List</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="savedClasses">Saved Classes</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control" id="search-input" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button class="btn btn-outline-secondary ml-2 my-sm-0" id="search-submit" type="submit">Search
-                                Classes</button>
-                        </form>
-                    </div>
-                </nav>
+    <div class="container-fullwidth">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="../assets/images/savant-demo-icon.png" style="height: 30px; width: 30px;">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="navSignInOut">Sign In<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/teacher.html">Teach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="all-classes">Class List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="savedClasses">Saved Classes</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control" id="search-input" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-secondary ml-2 my-sm-0" id="search-submit" type="submit">Search
+                        Classes</button>
+                </form>
             </div>
+        </nav>
+    </div>
     <!-- // card section to holder dynamically generated cards // -->
 
 
@@ -140,21 +145,23 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="create-a-class">Create A Class</h2>
-                </div>
+            </div>
         </div>
     </div>
-    
+
     <div class="container-fluid  teacher">
         <div class="row">
             <div class="col-12 make-class">
                 <form>
                     <div class="form-group  align-items-center">
                         <label for="classTitle">Class Title:</label>
-                        <input type="text" class="form-control" id="classTitle" placeholder="ex: JavaScript for Beginners">
+                        <input type="text" class="form-control" id="classTitle"
+                            placeholder="ex: JavaScript for Beginners">
                     </div>
                     <div class="form-group">
                         <label for="classDesc">Class Description:</label>
-                        <input type="text" class="form-control" id="classDesc" placeholder="ex: This class is an introduction to JavaScript function ...">
+                        <input type="text" class="form-control" id="classDesc"
+                            placeholder="ex: This class is an introduction to JavaScript function ...">
                     </div>
                     <div class="form-group">
                         <label for="classCateg">Class Category:</label>
@@ -176,15 +183,16 @@
                     <div class="form-group">
                         <label for="classTime">Date & Time of Class:</label>
                         <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" id="classTime" disable="disable" data-target="#datetimepicker1"/>
+                            <input type="text" class="form-control datetimepicker-input" id="classTime"
+                                disable="disable" data-target="#datetimepicker1" />
                             <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                    <label for="embedLink">Youtube Embed Link:</label>
-                    <input class="form-control" type="text" id="embed-link" readonly>
+                        <label for="embedLink">Youtube Embed Link:</label>
+                        <input class="form-control" type="text" id="embed-link" readonly>
                     </div>
                     <p id="submitError">Please hit submit to continue.</p>
                 </form>

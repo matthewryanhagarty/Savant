@@ -1,14 +1,5 @@
-/* 
-.middle-btn-right {
-float: left;
-}
-
-.middle-btn-left {
-float: right;
-} */
 
 body {
-  /* background: url(../images/background1.jpg); */
   background-color: antiquewhite;
 }
 
@@ -88,7 +79,6 @@ body {
 .carousel-inner {
   width: 800px;
   margin: 0 auto;
-  text-align: center;
 }
 
 #carouselExampleControls {
@@ -196,6 +186,14 @@ iframe {
 .user-profile-page {
 
   background-color: white;
+}
+
+.saved-classes {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Literata', serif;
 }
 
 
