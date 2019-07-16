@@ -53,7 +53,7 @@ body {
     margin-left: 20px;
     position: relative;
     float: left;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .card-body {
@@ -61,7 +61,7 @@ body {
   /* height: 100% !important;
   width: 100% !important; */
   position: relative;
-  overflow: scroll;
+  /* overflow: scroll; */
 
 }
 
