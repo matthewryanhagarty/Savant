@@ -2,7 +2,7 @@
 
 [Visit Savant deployed page]()
 
-Savant is an open source portal for tutorials and online classes. Our motto is "Education through observation". Knowledge is something that should be shared and this platform enables instructors to broadcast their skills with the world via YouTube livestream. 
+Savant is a free user content generated portal for tutorials and online classes. Our motto is "Education through observation". Knowledge is something that should be shared and this platform enables instructors to broadcast their expertise with the world via YouTube livestream.
 ___
 
 ### Design
