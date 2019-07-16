@@ -9,7 +9,8 @@ ___
 
 Savant users begin by creating a user profile by entering their username, email, password, contact url, and avatar jpg image file. After account creation a Savant user can opt to teach a class by providing a class title. After a title is given, the instructor then provides a class description, class description via drop-down menu, and schedules a date/time in Google Calendar. Upon sumbit, the YouTube API generates an embed with the livestream url. 
 
-The UI for Savant makes extensive use of Twitter Bootstrap CDN, animate.css, Google Fonts, and Font Awesome to create an engaging UX. Registered classes are displayed within dynamically generated cards within a Bootstrap carousel. Embedded within each class card is YouTube livestream iframe and course information from the YouTube API. The tagline and    
+The UI for Savant makes extensive use of Twitter Bootstrap CDN, animate.css, Google Fonts, and Font Awesome to create an engaging UX. Registered classes are displayed within dynamically generated cards within a Bootstrap carousel. Embedded within each class card is YouTube livestream iframe and course information from the YouTube API. The motto tagline and "Teach a Class"/"Learn A Skill" buttons are animated via class names in animate.css for aesthetic effect. Bootstrap's forms and modals provide streamlined structure to collect data values in order to make API calls and populate our sequelize models.
+
 
 ### Logic
 
