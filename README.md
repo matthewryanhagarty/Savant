@@ -1,11 +1,13 @@
 # Savant (Project 02)
 
 [Visit Savant deployed page]()
+
+Savant is an open source portal for tutorials and online classes. Knowledge is something that should be shared and this platform enables instructors to share their skills with the world via livestream.
 ___
 
 ### Design
 
-
+Savant users begin by creating a user profile by entering their username, email, password, contact url, and avatar jpg image file. After account creation a Savant user can opt to teach a class by providing a class title. After a title is given, the instructor then provides a class description, class description via drop-down menu, and schedules a date/time in Google Calendar. Upon sumbit, the YouTube API generates an embed with the livestream url. 
 
 
 ### Logic
@@ -37,6 +39,8 @@ ___
 * [Google Calendar API](https://developers.google.com/calendar/)
 * [AWS S3 Buckets](https://aws.amazon.com/s3/)
 * [Path](https://www.npmjs.com/package/path)
+* [Font Awesome](https://fontawesome.com/)
+* [Tempus Dominus DatePicker](https://tempusdominus.github.io/bootstrap-4/)
 
 
 ![Commits]()
