@@ -1,19 +1,16 @@
-/* 
-.middle-btn-right {
-float: left;
-}
-
-.middle-btn-left {
-float: right;
-} */
 
 body {
-  background: url(../images/background1.jpg);
+  background-color: antiquewhite;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 .navbar {
   width: 100%;
-  
+  margin-bottom: 20px;
+
 }
 
 
@@ -32,11 +29,12 @@ body {
 
 .motto {
   margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .card {
-    height: 500px !important;
-    width: 250px !important;
+    height: 475px !important;
+    width: 225px !important;
     margin: 0 auto;
     margin-bottom: 20px;
     /* margin-top: 20px; */
@@ -60,161 +58,147 @@ body {
 }
 
 .calendar {
-  height:40px;
-  width: 40px;
+  height:30px;
+  width: 30px;
   float: right;
   /* margin-left:10px; */
 }
 
 .cardFooter {
   position: absolute;
+  height: 40px;
+}
+
+.carousel-item {
+  margin: 0 auto !important;
+  width: 800px;
+  position: relative;
+  /* margin-left: 123px !important; */
+}
+
+.carousel-inner {
+  width: 800px;
+  margin: 0 auto;
 }
 
 #carouselExampleControls {
-
-margin: 0 auto;
-
-}
-
-/* .next {
   margin: 0 auto;
-  text-align: center;
-} */
-
-/* .section1 {
-  max-height: 1px; 
+  margin-left: 20px;
 }
 
-.section2 {
-  max-height: 1px; 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+  margin: 10px;
+
 }
 
-.section3 {
-  max-height: 1px; 
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 57px;
+  color: black;
 }
 
-.card-section1 {
+.carousel-control-prev-icon:before {
+  content: '<';
+  font-size: 57px;
+  color: black;
+}
+
+iframe {
+  height: 200px !important;
+  width: 223px !important;
+}
+
+.teacher {
   margin: 0 auto;
-  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 545px;
+  width: 700px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
 }
 
-.card-section2 {
-  margin: 0 auto;
-  text-align: center;
+.make-class {
+  margin-top: 10px;
 }
 
-.card-section3 {
+.create-a-class {
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
-} */
+  font-family: 'Literata', serif;
+}
+
+.user-sign-up {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 600px;
+  width: 700px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+}
+
+.sign-up {
+  margin-top: 10px;
+}
+
+.create-user {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Literata', serif;
+}
+
+.form-control-file {
+
+  border-style: solid;
+  border-width: 1px;
+}
+
+.profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  float: left;
+  padding: 40px;
+}
+
+.user-profile {
+  margin: auto;
+  width: 50%;
+
+}
+
+.user-profile-page {
+
+  background-color: white;
+}
+
+.saved-classes {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Literata', serif;
+}
 
 
-/* .carousel-inner {
-    scroll-behavior: smooth;
-    display: grid;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    grid-template-columns: repeat(3, 100%);
-    overflow: scroll;
-    scroll-behavior: smooth;
-    height: 650px !important;
+.card-section {
 
-  } */
-  /* .wrapper section {
-    max-height: 1px;  
-  } */
-
-
-  /* .wrapper section .item {
-    padding: 0 2px;
-    transition: 250ms all;
-  }
-  .wrapper section .item:hover {
-    transform: scale(1.2);
-  }
-  .wrapper section a {
-    position: relative;
-    text-align: center;
-    z-index: 0;
-  }
-  .wrapper section a:nth-of-type(1) {
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .wrapper section a:nth-of-type(2) {
-    top: 0;
-    bottom: 0;
-    right: 0;
-  } */
-
-  iframe {
-    height: 200px !important;
-    width: 250px !important;
-  }
-
-  .teacher {
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 550px;
-    width: 700px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: white;
-  }
-
-  .make-class {
-    margin-top: 10px;
-  }
-
-  .create-a-class {
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Literata', serif;
-  }
-
-  .user-sign-up {
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 600px;
-    width: 700px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: white;
-  }
-
-  .sign-up {
-    margin-top: 10px;
-  }
-
-  .create-user {
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Literata', serif;
-  }
-
-  .form-control-file {
-
-    border-style: solid;
-    border-width: 1px;
-  }
-
-  .profilePic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    float: left;
-    padding: 40px;
-  }
-
-  .user-profile {
-    margin: auto;
-    width: 50%;
-  }
+  margin: 0 auto;
+}
   
