@@ -1,5 +1,5 @@
 var express = require("express");
-var fileUpload = require("express-fileUpload");
+var fileUpload = require("express-fileupload");
 var app = express();
 var PORT = process.env.PORT || 8080;
 

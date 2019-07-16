@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "aws-sdk": "^2.493.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.10.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -17,14 +26,5 @@
   "bugs": {
     "url": "https://github.com/djgoldstone/Savant/issues"
   },
-  "homepage": "https://github.com/djgoldstone/Savant#readme",
-  "dependencies": {
-    "aws-sdk": "^2.493.0",
-    "dotenv": "^8.0.0",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.1.5",
-    "mysql2": "^1.6.5",
-    "path": "^0.12.7",
-    "sequelize": "^4.41.2"
-  }
+  "homepage": "https://github.com/djgoldstone/Savant#readme"
 }
