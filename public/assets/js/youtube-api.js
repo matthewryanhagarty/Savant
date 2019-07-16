@@ -79,8 +79,11 @@ gapi.load("client:auth2", function() {
           "scheduledStartTime": new Date(moment(date,"MM-DD-YYYY HH:mm a"))
         },
         "contentDetails": {
-          "monitorStream": {
-            enableMonitorStream: false
+          // "monitorStream": {
+          //   enableMonitorStream: true
+          // },
+          "broadcastStream": {
+            "enableBroadcastStream": "public" 
           },
           "enableClosedCaptions": true,
           "enableContentEncryption": true,
@@ -105,7 +108,7 @@ gapi.load("client:auth2", function() {
                 console.log("start Time", response.result.snippet.scheduledStartTime);
                 console.log("Title", response.result.snippet.title);
                 console.log("Channel ID", response.result.snippet.channelId);
-              var embed = response.result.contentDetails.monitorStream.embedHtml;
+              var embed = response.result.contentDetails.broadcastStream.embedHtml;
               $("#embed-link").attr("placeholder", embed);
       
               $("#embed-link").val(embed);
