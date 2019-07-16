@@ -2,13 +2,14 @@
 
 [Visit Savant deployed page]()
 
-Savant is an open source portal for tutorials and online classes. Knowledge is something that should be shared and this platform enables instructors to share their skills with the world via livestream.
+Savant is an open source portal for tutorials and online classes. Our motto is "Education through observation". Knowledge is something that should be shared and this platform enables instructors to broadcast their skills with the world via YouTube livestream. 
 ___
 
 ### Design
 
 Savant users begin by creating a user profile by entering their username, email, password, contact url, and avatar jpg image file. After account creation a Savant user can opt to teach a class by providing a class title. After a title is given, the instructor then provides a class description, class description via drop-down menu, and schedules a date/time in Google Calendar. Upon sumbit, the YouTube API generates an embed with the livestream url. 
 
+The UI for Savant makes extensive use of Twitter Bootstrap CDN, animate.css, Google Fonts, and Font Awesome to create an engaging UX. Registered classes are displayed within dynamically generated cards within a Bootstrap carousel. Embedded within each class card is YouTube livestream iframe and course information from the YouTube API. The tagline and    
 
 ### Logic
 
