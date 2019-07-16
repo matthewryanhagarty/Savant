@@ -41,7 +41,7 @@ body {
   height: 60%;
   mix-blend-mode: multiply;
   border-radius: 50%;
-  box-shadow: 2.5px 5px rgba(143, 143, 11, 0.712);
+  box-shadow: 2.5px 5px #969b9f;
 }
 
 .motto {
