@@ -79,6 +79,9 @@ gapi.load("client:auth2", function() {
           "scheduledStartTime": new Date(moment(date,"MM-DD-YYYY HH:mm a"))
         },
         "contentDetails": {
+          "monitorStream": {
+            enableMonitorStream: false
+          },
           "enableClosedCaptions": true,
           "enableContentEncryption": true,
           "enableDvr": true,
