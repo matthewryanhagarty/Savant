@@ -1,5 +1,9 @@
 # (Group Project - 2): Savant
 
+  <img src="public/assets/images/savant-gif.gif">
+
+
+
 [Visit the deployed Savant page](https://savant-mh.herokuapp.com/)
 
 ## Prerequisites 
